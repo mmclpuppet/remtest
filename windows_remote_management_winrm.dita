@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="windows-remote-management-winrm" domains="(topic concept)                            (topic hi-d)                            (topic ut-d)                            (topic indexing-d)                             (topic pr-d)                            (topic sw-d)                            (topic ui-d)   " ditaarch:DITAArchVersion="1.2"><title><ph conkeyref="ProductNames/windows"/> Remote Management (WinRM) </title><shortdesc>To authenticate with <ph conkeyref="ProductNames/windows"/> nodes, <ph conkeyref="ProductNames/remediate_long"/> uses
+        NTLM authentication over HTTPS on port 5986. When enabled, <ph conkeyref="ProductNames/remediate"/> falls back to
+        using NTLM authentication over HTTP on port 5985, if the default authentication
+        fails.</shortdesc><prolog><author type="creator" translate="no">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author></prolog><conbody/></concept>

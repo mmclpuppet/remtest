@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="upload-modules" domains="(topic task)                            (topic hi-d)                            (topic ut-d)                            (topic indexing-d)                              (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)   " ditaarch:DITAArchVersion="1.2"><title>Uploading modules</title><shortdesc>To help manage discovered resources, use the command line to 
+upload modules published on the Puppet Forge. The module must 
+contain a task. </shortdesc><prolog><author type="creator" translate="no">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author></prolog><taskbody><context>
+            <p/>
+        </context><steps><step conref="conref_modules_task.dita#conref-modules-task/step-1560420728918"><cmd/></step><step conref="conref_modules_task.dita#conref-modules-task/step-1560420744482"><cmd/></step><step conref="conref_modules_task.dita#conref-modules-task/step-1560420762589"><cmd/></step><step conref="conref_modules_task.dita#conref-modules-task/step-1560420780551"><cmd/></step><step conref="conref_modules_task.dita#conref-modules-task/step-1560420806940"><cmd/></step></steps></taskbody></task>

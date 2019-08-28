@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="run_a_task">
+    <title>Run a task</title>
+    <shortdesc/>
+    <prolog>
+        <author type="creator" translate="no">Claire Cadman &lt;claire.cadman@puppet.com&gt;</author>
+    </prolog>
+    
+    <taskbody>
+        <context>
+            <p/>
+        </context>
+        <steps>
+            <step>
+                <cmd/>
+            </step>
+        </steps>
+    </taskbody>
+</task>
