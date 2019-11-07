@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="install-puppet-agents" ditaarch:DITAArchVersion="1.2"><title>Installing Puppet agents</title><shortdesc>Install a <ph conkeyref="ProductNames/pe_long"/> agent to regularly pull configuration
-                        catalogs from a <ph conkeyref="ProductNames/puppet"/> master, and apply them
-                        to your target <ph conkeyref="ProductNames/linux"/> or <ph conkeyref="ProductNames/windows"/> nodes. The agent maintains
-                        the node configuration you want.</shortdesc><prolog><author type="creator" translate="no">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author></prolog><conbody><section><title/><p><table conref="conref_tasks_reference.dita#conref-tasks-reference/table-1560355898995"><tgroup cols="1"><tbody><row><entry/></row></tbody></tgroup></table></p></section></conbody></concept>

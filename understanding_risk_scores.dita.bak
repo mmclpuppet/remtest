@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="understanding-risk-scores" ditaarch:DITAArchVersion="1.2"><title>Understanding risk scores</title><shortdesc>The first step to prioritizing vulnerabilities is understanding the vulnerability risk score. This score provides a clear indication of the risk that a vulnerability poses to your infrastructure.</shortdesc><prolog><author type="creator" translate="no">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author></prolog><conbody><p/></conbody></concept>

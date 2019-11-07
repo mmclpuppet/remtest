@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" ditaarch:DITAArchVersion="1.2" id="run-user-defined-tasks"><title>Running  tasks</title><shortdesc>Upload your scripts to be converted into tasks, or upload a <ph conkeyref="ProductNames/puppet"/> module containing a task, to help manage
-        discovered resources.</shortdesc><prolog><author translate="no" type="creator">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author></prolog><conbody><p>For more information, see <xref href="upload_scripts.dita">Uploading scripts</xref> or <xref href="upload_modules.dita">Uploading modules</xref>. </p></conbody></concept>
