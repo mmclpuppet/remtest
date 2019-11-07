@@ -2,7 +2,7 @@
 author: Eamonn Smith <eamonn.smith@puppet.com\>
 ---
 
-# Adding node credentials
+# Adding node DOC EDIT TEST3 credentials
 
 Add credentials to authenticate with nodes and fix vulnerabilities or gain insights into discovered resources. Each credential is encrypted and stored securely in the vault.
 
