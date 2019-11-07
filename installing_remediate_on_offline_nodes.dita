@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
-<task id="install-remediate-offline"><title>Install <ph conkeyref="ProductNames/remediate"/> on offline nodes</title><shortdesc>If any of your swarm nodes are offline (do not have external connectivity), you must manually import the <ph conkeyref="ProductNames/remediate"/> images in order to install the product.</shortdesc><prolog><author translate="no" type="creator">Michael McLoughlin &lt;michael.mcloughlin@puppet.com&gt;</author></prolog><taskbody><prereq><p>Prior to installing <ph conkeyref="ProductNames/remediate"/> on any offline nodes, check that you have carried out the following prerequisite tasks:</p><ul><li>Make sure you meet the system requirements for installing and running <ph conkeyref="ProductNames/remediate"/>, and that you have received your <xref format="html" href="https://licenses.puppet.com/" scope="external">license</xref>.</li><li>Install <ph conkeyref="ProductNames/remediate"/> on a node with external connectivity. See the instructions that explain how to <b>Install <ph conkeyref="ProductNames/remediate"/> on an online node</b> for more information. You will import the <ph conkeyref="ProductNames/remediate"/> images exported from this node into the nodes that do not have internet connectivity.</li><li> Ensure that Docker and Docker Compose are installed on the nodes where you want to install the <ph conkeyref="ProductNames/remediate"/> images. If you are installing Docker Compose on <ph conkeyref="ProductNames/windows"/>, ensure that you create a new <ph conkeyref="ProductNames/windows"/> environment variable called <codeph>COMPOSE_CONVERT_WINDOWS_PATHS</codeph> and set it to <codeph>1</codeph>. This enables path conversion from Windows-style to Unix-style in volume definitions.</li><li>Ensure that your license and the <ph conkeyref="ProductNames/remediate"/> <xref format="yaml" href="https://storage.googleapis.com/remediate/stable/latest/docker-compose.yml" scope="external">Docker Compose file</xref> are added to the nodes where you want to install the <ph conkeyref="ProductNames/remediate"/> images.</li></ul><p/></prereq><context><p>To install <ph conkeyref="ProductNames/remediate"/> on nodes that do not have network connectivity:</p></context><steps><step><cmd>On a node where you have <ph conkeyref="ProductNames/remediate"/> already installed, export the <ph conkeyref="ProductNames/remediate"/> images as a <term>tar</term> file:</cmd><info><codeblock translate="no" xml:space="preserve">$ docker-compose run remediate export</codeblock></info><stepresult><p>A file named <codeph translate="no">remediate.tar.gz</codeph> is added to the folder where your Docker Compose file is stored.</p></stepresult></step><step><cmd>On the node where you want to install <ph conkeyref="ProductNames/remediate"/>, initialize a swarm by running the following command: </cmd><info><codeblock translate="no" xml:space="preserve">docker swarm init</codeblock></info></step><step><cmd>Copy the <codeph translate="no">remediate.tar.gz</codeph> file to the folder on the offline node where your Docker Compose file is located, and import it by using the command below:</cmd><info><codeblock translate="no" xml:space="preserve">$ docker-compose run remediate import --filename ./remediate.tar.gz</codeblock></info></step><step><cmd>Use the following command ⁠to start <ph conkeyref="ProductNames/remediate"/> (replacing <codeph translate="no">your-license.json</codeph> with your own license):</cmd><info><codeblock translate="no" xml:space="preserve">docker-compose run remediate start --license-file your-license.json</codeblock></info></step><step><cmd>To check that the containers have started running, run this command:</cmd><info><codeblock translate="no" xml:space="preserve">docker ps</codeblock></info><stepresult><p>The list of running containers:</p><codeblock translate="no" xml:space="preserve">CONTAINER ID        IMAGE                                             COMMAND                  CREATED             STATUS                   PORTS                NAMES
+<task id="install-remediate-offline">
+    <title>Install <ph conkeyref="ProductNames/remediate"/> on offline nodes</title>
+    <shortdesc>If any of your swarm nodes are offline (do not have external connectivity), you must
+        manually import the <ph conkeyref="ProductNames/remediate"/> images in order to install the
+        product.</shortdesc>
+    <prolog>
+        <author translate="no" type="creator">Michael McLoughlin
+            &lt;michael.mcloughlin@puppet.com&gt;</author>
+    </prolog>
+    <taskbody>
+        <prereq><p>Prior to installing <ph conkeyref="ProductNames/remediate"/> on any offline
+                nodes, check that you have carried out the following prerequisite tasks:</p><ul>
+                <li>Make sure you meet the system requirements for installing and running <ph
+                        conkeyref="ProductNames/remediate"/>, and that you have received your <xref
+                        format="html" href="https://licenses.puppet.com/" scope="external"
+                        >license</xref>.</li>
+                <li>Install <ph conkeyref="ProductNames/remediate"/> on a node with external
+                    connectivity. See the instructions that explain how to <b>Install <ph
+                            conkeyref="ProductNames/remediate"/> on an online node</b> for more
+                    information. You will import the <ph conkeyref="ProductNames/remediate"/> images
+                    exported from this node into the nodes that do not have internet
+                    connectivity.</li>
+                <li> Ensure that Docker and Docker Compose are installed on the nodes where you want
+                    to install the <ph conkeyref="ProductNames/remediate"/> images. If you are
+                    installing Docker Compose on <ph conkeyref="ProductNames/windows"/>, ensure that
+                    you create a new <ph conkeyref="ProductNames/windows"/> environment variable
+                    called <codeph>COMPOSE_CONVERT_WINDOWS_PATHS</codeph> and set it to
+                        <codeph>1</codeph>. This enables path conversion from Windows-style to
+                    Unix-style in volume definitions.</li>
+                <li>Ensure that your license and the <ph conkeyref="ProductNames/remediate"/>
+                    <xref format="yaml"
+                        href="https://storage.googleapis.com/remediate/stable/latest/docker-compose.yml"
+                        scope="external">Docker Compose file</xref> are added to the nodes where you
+                    want to install the <ph conkeyref="ProductNames/remediate"/> images.</li>
+            </ul><p/></prereq>
+        <context><p>To install <ph conkeyref="ProductNames/remediate"/> on nodes that do not have
+                network connectivity:</p></context>
+        <steps>
+            <step>
+                <cmd>On a node where you have <ph conkeyref="ProductNames/remediate"/> already
+                    installed, export the <ph conkeyref="ProductNames/remediate"/> images as a
+                        <term>tar</term> file:</cmd>
+                <info><codeblock translate="no" xml:space="preserve">$ docker-compose run remediate export</codeblock></info>
+                <stepresult><p>A file named <codeph translate="no">remediate.tar.gz</codeph> is
+                        added to the folder where your Docker Compose file is
+                    stored.</p></stepresult>
+            </step>
+            <step>
+                <cmd>On the node where you want to install <ph conkeyref="ProductNames/remediate"/>,
+                    initialize a swarm by running the following command: </cmd>
+                <info><codeblock translate="no" xml:space="preserve">docker swarm init</codeblock></info>
+            </step>
+            <step>
+                <cmd>Copy the <codeph translate="no">remediate.tar.gz</codeph> file to the folder on
+                    the offline node where your Docker Compose file is located, and import it by
+                    using the command below:</cmd>
+                <info><codeblock translate="no" xml:space="preserve">$ docker-compose run remediate import --filename ./remediate.tar.gz</codeblock></info>
+            </step>
+            <step>
+                <cmd>Use the following command ⁠to start <ph conkeyref="ProductNames/remediate"/>
+                    (replacing <codeph translate="no">your-license.json</codeph> with your own
+                    license):</cmd>
+                <info><codeblock translate="no" xml:space="preserve">docker-compose run remediate start --license-file your-license.json</codeblock></info>
+            </step>
+            <step>
+                <cmd>To check that the containers have started running, run this command:</cmd>
+                <info><codeblock translate="no" xml:space="preserve">docker ps</codeblock></info>
+                <stepresult><p>The list of running
+                    containers:</p><codeblock translate="no" xml:space="preserve">CONTAINER ID        IMAGE                                             COMMAND                  CREATED             STATUS                   PORTS                NAMES
 36139cda23ca        gcr.io/puppet-discovery/pdp-go:&lt;version&gt;          "/app/entrypoint.sh"     3 minutes ago       Up 3 minutes (healthy)   8082/tcp, 8087/tcp   remediate_gopdp.1.w035aad0ifvu0ynaimxy64lcq
 43709401f394        gcr.io/puppet-discovery/pd-storage:&lt;version&gt;      "storageEntryPoint.s…"   3 minutes ago       Up 3 minutes (healthy)   5432/tcp             remediate_storage.1.omv1rrd3rwhnwo3ngurgtcnxk
 551b061acc98        gcr.io/puppet-discovery/licensing-api:&lt;version&gt;   "/entrypoint.sh"         3 minutes ago       Up 3 minutes (healthy)                        remediate_licensing.1.kdoj7s492el77rdpc2rza3fx7
@@ -11,4 +79,24 @@ a3a641af5269        gcr.io/puppet-discovery/pdp-proxy:&lt;version&gt;       "/pd
 c60250b8a2eb        gcr.io/puppet-discovery/node-ui:&lt;version&gt;         "/usr/src/app/entryp…"   3 minutes ago       Up 3 minutes (healthy)                        remediate_ui.1.3u0tewgou7t4hz2c46nn4mydo
 f9af99dc9ca7        gcr.io/puppet-discovery/edge:&lt;version&gt;            "/edge-svc"              3 minutes ago       Up 3 minutes             9997/tcp             remediate_edge.1.koacwnjoce2tabwcbi73619fu
 149485b54fec        gcr.io/puppet-discovery/controller:&lt;version&gt;      "/controller-svc"        4 minutes ago       Up 4 minutes (healthy)   9999/tcp             remediate_controller.1.mww2fm9up4lmeisjorul89hr4
-f9f1ab4a029d        gcr.io/puppet-discovery/vr:&lt;version&gt;              "/vr-svc"                4 minutes ago       Up 4 minutes (healthy)                        remediate_vr.1.yjlliup91g4mac1bklvvw2nqq</codeblock></stepresult></step><step><cmd>To access <ph conkeyref="ProductNames/remediate"/> on a local workstation, the URL is <codeph translate="no"> <xref format="html" href="https://localhost:8443/" scope="external">https://localhost:8443</xref> </codeph>, or port <codeph translate="no">8443</codeph> on the host where you installed <ph conkeyref="ProductNames/remediate"/>.</cmd></step><step><cmd>Read and accept the software license agreement.</cmd></step><step><cmd>Sign in to <ph conkeyref="ProductNames/remediate"/>.</cmd><info><p>For default usernames and passwords, see <b>Managing user access</b>.</p></info></step></steps></taskbody></task>
+f9f1ab4a029d        gcr.io/puppet-discovery/vr:&lt;version&gt;              "/vr-svc"                4 minutes ago       Up 4 minutes (healthy)                        remediate_vr.1.yjlliup91g4mac1bklvvw2nqq</codeblock></stepresult>
+            </step>
+            <step>
+                <cmd>To access <ph conkeyref="ProductNames/remediate"/> on a local workstation, the
+                    URL is <codeph translate="no">
+                        <xref format="html" href="https://localhost:8443/" scope="external"
+                            >https://localhost:8443</xref>
+                    </codeph>, or port <codeph translate="no">8443</codeph> on the host where you
+                    installed <ph conkeyref="ProductNames/remediate"/>.</cmd>
+            </step>
+            <step>
+                <cmd>Read and accept the software license agreement.</cmd>
+            </step>
+            <step>
+                <cmd>Sign in to <ph conkeyref="ProductNames/remediate"/>.</cmd>
+                <info><p>For default usernames and passwords, see <b>Managing user
+                    access</b>.</p></info>
+            </step>
+        </steps>
+    </taskbody>
+</task>

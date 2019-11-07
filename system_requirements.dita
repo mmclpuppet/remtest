@@ -1,5 +1,303 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" ditaarch:DITAArchVersion="1.2" domains="(topic concept)                            (topic hi-d)                            (topic ut-d)                            (topic indexing-d)                             (topic pr-d)                            (topic sw-d)                            (topic ui-d)   " id="system-requirements"><title>System requirements</title><shortdesc>Before installing <ph conkeyref="ProductNames/remediate_long"/>, check to ensure your system meets these requirements.</shortdesc><prolog><author translate="no" type="creator">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author></prolog><conbody><section><title>Supported operating systems</title><p>You can install <ph conkeyref="ProductNames/remediate"/> on the following operating systems.</p><p> <table><tgroup cols="4"><colspec colname="c1" colnum="1"/><colspec colname="c2" colnum="2"/><colspec colname="c3" colnum="3"/><colspec colname="c4" colnum="4"/><thead><row><entry colname="c1">Operating System</entry><entry colname="c2">Versions</entry><entry colname="c3">Architecture</entry><entry colname="c4">Prerequisite</entry></row></thead><tbody><row><entry colname="c1"> <ph conkeyref="ProductNames/centos"/> </entry><entry colname="c2">7 or higher</entry><entry colname="c3">x64</entry><entry colname="c4" morerows="3"> <lines xml:space="preserve">
-                                        <xref href="https://docs.docker.com/install/#supported-platforms" scope="external" type="http:" format="html">Docker CE</xref> 17.06-ce or higher, or <xref href="https://docs.docker.com/install/linux/docker-ee/centos/" scope="external" type="http:" format="html">Docker EE</xref> 17.06-ee or higher.</lines> </entry></row><row><entry colname="c1"> <ph conkeyref="ProductNames/rhel_long"/> </entry><entry colname="c2">7 or higher</entry><entry colname="c3">x64</entry></row><row><entry colname="c1"> <ph conkeyref="ProductNames/debian"/> </entry><entry colname="c2">8 or higher</entry><entry colname="c3">x64</entry></row><row><entry colname="c1"> <ph conkeyref="ProductNames/ubuntu"/> </entry><entry colname="c2">14.04 or higher</entry><entry colname="c3">x64</entry></row><row><entry colname="c1"> <ph conkeyref="ProductNames/windows"/> </entry><entry colname="c2">10</entry><entry colname="c3">x64</entry><entry colname="c4"> <p> <xref href="https://docs.docker.com/docker-for-windows/install/" scope="external" type="http:" format="html">Docker</xref> for <ph conkeyref="ProductNames/windows"/>.</p> <p>When you install <ph conkeyref="ProductNames/remediate"/> on a virtual machine, you must enable nested virtualization. For more information, see the documentation for the hypervisor you are using. </p> </entry></row></tbody></tgroup></table> </p></section><section><title>Docker requirements</title><p>Both Docker CE and Docker EE editions include the option to run Kubernetes as a single-node cluster on a local machine using <xref href="https://kubernetes.io/docs/reference/access-authn-authz/controlling-access/#api-server-ports-and-ips" scope="external" type="http:" format="html">port <codeph translate="no">8080</codeph> </xref>. <ph conkeyref="ProductNames/remediate"/> requires that no other application use ports <codeph translate="no">8080</codeph> and <codeph translate="no">8443</codeph>. Note that Docker swarm mode requires <xref href="https://docs.docker.com/engine/swarm/swarm-tutorial/#open-protocols-and-ports-between-the-hosts" scope="external" format="html">additional ports</xref>. </p><p>If using Docker for <ph conkeyref="ProductNames/windows"/>, the virtual machine must be configured with 8 GB of memory. </p><p>To prevent running out of storage, <xref href="https://success.docker.com/article/how-to-setup-log-rotation-post-installation" scope="external" type="http:" format="html">configure log rotation</xref> by editing the <codeph translate="no">log-driver</codeph> and <codeph translate="no">log-opts</codeph> parameters within the daemon configuration file that is located here:<ul><li><p> <ph conkeyref="ProductNames/linux"/>: <codeph translate="no">/etc/docker/daemon.json</codeph> </p></li><li><p> <ph conkeyref="ProductNames/windows"/>: <codeph translate="no">%programdata%\docker\config\daemon.json</codeph> </p></li></ul> </p><p>To deploy the Docker Compose file, you need to install <xref href="https://docs.docker.com/compose/install/" scope="external" format="html">Docker
-               Compose</xref> version 1.24.1. </p></section><section><title>Discoverable operating systems</title><p>Discover resources that run on these operating systems.</p><p> <table><tgroup cols="3"><colspec colname="c1" colnum="1"/><colspec colname="c2" colnum="2"/><colspec colname="c3" colnum="3"/><thead><row><entry colname="c1">Operating system</entry><entry colname="c2">Versions</entry><entry colname="c3">Prerequisite</entry></row></thead><tbody><row><entry colname="c1">Enterprise <ph conkeyref="ProductNames/linux"/>: <ul><li><p> <ph conkeyref="ProductNames/centos"/> </p></li><li><p> <ph conkeyref="ProductNames/rhel_long"/> </p></li></ul> </entry><entry colname="c2">5 or higher</entry><entry colname="c3" morerows="3">For the account <ph conkeyref="ProductNames/remediate"/> authenticates with, configure bash as the login shell.</entry></row><row><entry colname="c1"> <ph conkeyref="ProductNames/debian"/> </entry><entry colname="c2">7 or higher</entry></row><row><entry colname="c1"> <ph conkeyref="ProductNames/suseles"/> </entry><entry colname="c2">12</entry></row><row><entry colname="c1"> <ph conkeyref="ProductNames/ubuntu"/> </entry><entry colname="c2">14.04 or higher</entry></row><row><entry colname="c1"> <ph conkeyref="ProductNames/windows"/> Server</entry><entry colname="c2">2012 or higher</entry><entry colname="c3">WinRM is enabled and <ph conkeyref="ProductNames/powershell"/> 3.0 is installed. </entry></row></tbody></tgroup></table> </p></section><section><title>System configuration</title><p>Before installing <ph conkeyref="ProductNames/remediate"/>, make sure that your network is properly configured, and that the time is correctly set and managed on each server. These are the port requirements for a <ph conkeyref="ProductNames/remediate"/> installation.</p><p> <simpletable><sthead><stentry>Port</stentry><stentry>Description</stentry></sthead><strow><stentry> <ul><li><p> <codeph translate="no">443</codeph> (HTTPS)</p></li></ul> </stentry><stentry>Required to install or update to the latest version of <ph conkeyref="ProductNames/remediate"/> from: <ul><li><p>storage.googleapis.com</p></li><li><p>gcr.io</p></li></ul> </stentry></strow><strow><stentry> <ul><li><p> <codeph translate="no">8443</codeph> (HTTPS)</p></li></ul> </stentry><stentry> <p>Required to view the <ph conkeyref="ProductNames/remediate"/> dashboards.</p> </stentry></strow><strow><stentry> <ul><li><p> <codeph translate="no">22</codeph> </p></li></ul> </stentry><stentry>Required for SSH authentication on discovered <ph conkeyref="ProductNames/linux"/> hosts.</stentry></strow><strow><stentry> <ul><li><p> <codeph translate="no">5986</codeph> (HTTP)</p></li><li><p> <codeph translate="no">5985</codeph> (HTTP - fallback)</p></li></ul> </stentry><stentry>Required for WinRM authentication on discovered <ph conkeyref="ProductNames/windows"/> hosts. </stentry></strow></simpletable> </p></section><section><title>Hardware requirements</title><p> <ph conkeyref="ProductNames/remediate"/> requires:<table><tgroup cols="2"><tbody><row><entry>Storage</entry><entry>20.0 GB</entry></row><row><entry>Memory</entry><entry>8.0 GB</entry></row><row><entry>CPUs </entry><entry>2</entry></row></tbody></tgroup></table> </p></section><section><title>Supported browsers</title><p>The <ph conkeyref="ProductNames/remediate"/> user interface is supported on the latest versions of the following browsers: <ul><li><p> <ph conkeyref="ProductNames/google_chrome"/> </p></li><li><p> <ph conkeyref="ProductNames/mozilla_firefox"/> </p></li><li><p> <ph conkeyref="ProductNames/microsoft_edge"/> </p></li><li><p> <ph conkeyref="ProductNames/apple_safari"/> </p></li></ul> </p></section></conbody></concept>
+<concept ditaarch:DITAArchVersion="1.2" id="system-requirements"
+                         xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+                         <title>System requirements</title>
+                         <shortdesc>Before installing <ph conkeyref="ProductNames/remediate_long"/>,
+                                                  check to ensure your system meets these
+                                                  requirements.</shortdesc>
+                         <prolog>
+                                                  <author translate="no" type="creator">Eamonn Smith
+                                                  &lt;eamonn.smith@puppet.com&gt;</author>
+                         </prolog>
+                         <conbody>
+                                                  <section><title>Supported operating
+                                                  systems</title><p>You can install <ph
+                                                  conkeyref="ProductNames/remediate"/> on the
+                                                  following operating systems.</p><p>
+                                                  <table>
+                                                  <tgroup cols="4">
+                                                  <colspec colname="c1" colnum="1"/>
+                                                  <colspec colname="c2" colnum="2"/>
+                                                  <colspec colname="c3" colnum="3"/>
+                                                  <colspec colname="c4" colnum="4"/>
+                                                  <thead>
+                                                  <row>
+                                                  <entry colname="c1">Operating System</entry>
+                                                  <entry colname="c2">Versions</entry>
+                                                  <entry colname="c3">Architecture</entry>
+                                                  <entry colname="c4">Prerequisite</entry>
+                                                  </row>
+                                                  </thead>
+                                                  <tbody>
+                                                  <row>
+                                                  <entry colname="c1">
+                                                  <ph conkeyref="ProductNames/centos"/>
+                                                  </entry>
+                                                  <entry colname="c2">7 or higher</entry>
+                                                  <entry colname="c3">x64</entry>
+                                                  <entry colname="c4" morerows="3">
+                                                  <lines xml:space="preserve">
+                                        <xref format="html" href="https://docs.docker.com/install/#supported-platforms" scope="external" type="http:">Docker CE</xref> 17.06-ce or higher, or <xref format="html" href="https://docs.docker.com/install/linux/docker-ee/centos/" scope="external" type="http:">Docker EE</xref> 17.06-ee or higher.</lines>
+                                                  </entry>
+                                                  </row>
+                                                  <row>
+                                                  <entry colname="c1">
+                                                  <ph conkeyref="ProductNames/rhel_long"/>
+                                                  </entry>
+                                                  <entry colname="c2">7 or higher</entry>
+                                                  <entry colname="c3">x64</entry>
+                                                  </row>
+                                                  <row>
+                                                  <entry colname="c1">
+                                                  <ph conkeyref="ProductNames/debian"/>
+                                                  </entry>
+                                                  <entry colname="c2">8 or higher</entry>
+                                                  <entry colname="c3">x64</entry>
+                                                  </row>
+                                                  <row>
+                                                  <entry colname="c1">
+                                                  <ph conkeyref="ProductNames/ubuntu"/>
+                                                  </entry>
+                                                  <entry colname="c2">14.04 or higher</entry>
+                                                  <entry colname="c3">x64</entry>
+                                                  </row>
+                                                  <row>
+                                                  <entry colname="c1">
+                                                  <ph conkeyref="ProductNames/windows"/>
+                                                  </entry>
+                                                  <entry colname="c2">10</entry>
+                                                  <entry colname="c3">x64</entry>
+                                                  <entry colname="c4">
+                                                  <p>
+                                                  <xref format="html"
+                                                  href="https://docs.docker.com/docker-for-windows/install/"
+                                                  scope="external" type="http:">Docker</xref> for
+                                                  <ph conkeyref="ProductNames/windows"/>.</p>
+                                                  <p>When you install <ph
+                                                  conkeyref="ProductNames/remediate"/> on a virtual
+                                                  machine, you must enable nested virtualization.
+                                                  For more information, see the documentation for
+                                                  the hypervisor you are using. </p>
+                                                  </entry>
+                                                  </row>
+                                                  </tbody>
+                                                  </tgroup>
+                                                  </table>
+                                                  </p></section>
+                                                  <section><title>Docker requirements</title><p>Both
+                                                  Docker CE and Docker EE editions include the
+                                                  option to run Kubernetes as a single-node cluster
+                                                  on a local machine using <xref format="html"
+                                                  href="https://kubernetes.io/docs/reference/access-authn-authz/controlling-access/#api-server-ports-and-ips"
+                                                  scope="external" type="http:">port <codeph
+                                                  translate="no">8080</codeph>
+                                                  </xref>. <ph conkeyref="ProductNames/remediate"/>
+                                                  requires that no other application use ports
+                                                  <codeph translate="no">8080</codeph> and <codeph
+                                                  translate="no">8443</codeph>. Note that Docker
+                                                  swarm mode requires <xref format="html"
+                                                  href="https://docs.docker.com/engine/swarm/swarm-tutorial/#open-protocols-and-ports-between-the-hosts"
+                                                  scope="external">additional ports</xref>.
+                                                  </p><p>If using Docker for <ph
+                                                  conkeyref="ProductNames/windows"/>, the virtual
+                                                  machine must be configured with 8 GB of memory.
+                                                  </p><p>To prevent running out of storage, <xref
+                                                  format="html"
+                                                  href="https://success.docker.com/article/how-to-setup-log-rotation-post-installation"
+                                                  scope="external" type="http:">configure log
+                                                  rotation</xref> by editing the <codeph
+                                                  translate="no">log-driver</codeph> and <codeph
+                                                  translate="no">log-opts</codeph> parameters within
+                                                  the daemon configuration file that is located here:<ul>
+                                                  <li><p>
+                                                  <ph conkeyref="ProductNames/linux"/>: <codeph
+                                                  translate="no">/etc/docker/daemon.json</codeph>
+                                                  </p></li>
+                                                  <li><p>
+                                                  <ph conkeyref="ProductNames/windows"/>: <codeph
+                                                  translate="no"
+                                                  >%programdata%\docker\config\daemon.json</codeph>
+                                                  </p></li>
+                                                  </ul>
+                                                  </p><p>To deploy the Docker Compose file, you need
+                                                  to install <xref format="html"
+                                                  href="https://docs.docker.com/compose/install/"
+                                                  scope="external">Docker Compose</xref> version
+                                                  1.24.1. </p></section>
+                                                  <section><title>Discoverable operating
+                                                  systems</title><p>Discover resources that run on
+                                                  these operating systems.</p><p>
+                                                  <table>
+                                                  <tgroup cols="3">
+                                                  <colspec colname="c1" colnum="1"/>
+                                                  <colspec colname="c2" colnum="2"/>
+                                                  <colspec colname="c3" colnum="3"/>
+                                                  <thead>
+                                                  <row>
+                                                  <entry colname="c1">Operating system</entry>
+                                                  <entry colname="c2">Versions</entry>
+                                                  <entry colname="c3">Prerequisite</entry>
+                                                  </row>
+                                                  </thead>
+                                                  <tbody>
+                                                  <row>
+                                                  <entry colname="c1">Enterprise <ph
+                                                  conkeyref="ProductNames/linux"/>: <ul>
+                                                  <li><p>
+                                                  <ph conkeyref="ProductNames/centos"/>
+                                                  </p></li>
+                                                  <li><p>
+                                                  <ph conkeyref="ProductNames/rhel_long"/>
+                                                  </p></li>
+                                                  </ul>
+                                                  </entry>
+                                                  <entry colname="c2">5 or higher</entry>
+                                                  <entry colname="c3" morerows="3">For the account
+                                                  <ph conkeyref="ProductNames/remediate"/>
+                                                  authenticates with, configure bash as the login
+                                                  shell.</entry>
+                                                  </row>
+                                                  <row>
+                                                  <entry colname="c1">
+                                                  <ph conkeyref="ProductNames/debian"/>
+                                                  </entry>
+                                                  <entry colname="c2">7 or higher</entry>
+                                                  </row>
+                                                  <row>
+                                                  <entry colname="c1">
+                                                  <ph conkeyref="ProductNames/suseles"/>
+                                                  </entry>
+                                                  <entry colname="c2">12</entry>
+                                                  </row>
+                                                  <row>
+                                                  <entry colname="c1">
+                                                  <ph conkeyref="ProductNames/ubuntu"/>
+                                                  </entry>
+                                                  <entry colname="c2">14.04 or higher</entry>
+                                                  </row>
+                                                  <row>
+                                                  <entry colname="c1">
+                                                  <ph conkeyref="ProductNames/windows"/>
+                                                  Server</entry>
+                                                  <entry colname="c2">2012 or higher</entry>
+                                                  <entry colname="c3">WinRM is enabled and <ph
+                                                  conkeyref="ProductNames/powershell"/> 3.0 is
+                                                  installed. </entry>
+                                                  </row>
+                                                  </tbody>
+                                                  </tgroup>
+                                                  </table>
+                                                  </p></section>
+                                                  <section><title>System
+                                                  configuration</title><p>Before installing <ph
+                                                  conkeyref="ProductNames/remediate"/>, make sure
+                                                  that your network is properly configured, and that
+                                                  the time is correctly set and managed on each
+                                                  server. These are the port requirements for a <ph
+                                                  conkeyref="ProductNames/remediate"/>
+                                                  installation.</p><p>
+                                                  <simpletable>
+                                                  <sthead>
+                                                  <stentry>Port</stentry>
+                                                  <stentry>Description</stentry>
+                                                  </sthead>
+                                                  <strow>
+                                                  <stentry>
+                                                  <ul>
+                                                  <li><p>
+                                                  <codeph translate="no">443</codeph>
+                                                  (HTTPS)</p></li>
+                                                  </ul>
+                                                  </stentry>
+                                                  <stentry>Required to install or update to the
+                                                  latest version of <ph
+                                                  conkeyref="ProductNames/remediate"/> from: <ul>
+                                                  <li><p>storage.googleapis.com</p></li>
+                                                  <li><p>gcr.io</p></li>
+                                                  </ul>
+                                                  </stentry>
+                                                  </strow>
+                                                  <strow>
+                                                  <stentry>
+                                                  <ul>
+                                                  <li><p>
+                                                  <codeph translate="no">8443</codeph>
+                                                  (HTTPS)</p></li>
+                                                  </ul>
+                                                  </stentry>
+                                                  <stentry>
+                                                  <p>Required to view the <ph
+                                                  conkeyref="ProductNames/remediate"/>
+                                                  dashboards.</p>
+                                                  </stentry>
+                                                  </strow>
+                                                  <strow>
+                                                  <stentry>
+                                                  <ul>
+                                                  <li><p>
+                                                  <codeph translate="no">22</codeph>
+                                                  </p></li>
+                                                  </ul>
+                                                  </stentry>
+                                                  <stentry>Required for SSH authentication on
+                                                  discovered <ph conkeyref="ProductNames/linux"/>
+                                                  hosts.</stentry>
+                                                  </strow>
+                                                  <strow>
+                                                  <stentry>
+                                                  <ul>
+                                                  <li><p>
+                                                  <codeph translate="no">5986</codeph>
+                                                  (HTTP)</p></li>
+                                                  <li><p>
+                                                  <codeph translate="no">5985</codeph> (HTTP -
+                                                  fallback)</p></li>
+                                                  </ul>
+                                                  </stentry>
+                                                  <stentry>Required for WinRM authentication on
+                                                  discovered <ph conkeyref="ProductNames/windows"/>
+                                                  hosts. </stentry>
+                                                  </strow>
+                                                  </simpletable>
+                                                  </p></section>
+                                                  <section><title>Hardware requirements</title><p>
+                                                  <ph conkeyref="ProductNames/remediate"/> requires:<table>
+                                                  <tgroup cols="2">
+                                                  <tbody>
+                                                  <row>
+                                                  <entry>Storage</entry>
+                                                  <entry>20.0 GB</entry>
+                                                  </row>
+                                                  <row>
+                                                  <entry>Memory</entry>
+                                                  <entry>8.0 GB</entry>
+                                                  </row>
+                                                  <row>
+                                                  <entry>CPUs </entry>
+                                                  <entry>2</entry>
+                                                  </row>
+                                                  </tbody>
+                                                  </tgroup>
+                                                  </table>
+                                                  </p></section>
+                                                  <section><title>Supported browsers</title><p>The
+                                                  <ph conkeyref="ProductNames/remediate"/> user
+                                                  interface is supported on the latest versions of
+                                                  the following browsers: <ul>
+                                                  <li><p>
+                                                  <ph conkeyref="ProductNames/google_chrome"/>
+                                                  </p></li>
+                                                  <li><p>
+                                                  <ph conkeyref="ProductNames/mozilla_firefox"/>
+                                                  </p></li>
+                                                  <li><p>
+                                                  <ph conkeyref="ProductNames/microsoft_edge"/>
+                                                  </p></li>
+                                                  <li><p>
+                                                  <ph conkeyref="ProductNames/apple_safari"/>
+                                                  </p></li>
+                                                  </ul>
+                                                  </p></section>
+                         </conbody>
+</concept>

@@ -1,3 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
-<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="pre-air-gapped-install" domains="(topic task)                            (topic hi-d)                            (topic ut-d)                            (topic indexing-d)                              (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)   " ditaarch:DITAArchVersion="1.2"><title>On a machine planned for an air-gap</title><shortdesc/><prolog><author type="creator" translate="no">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author></prolog><taskbody><prereq><p><note type="note">Make sure your machine  meets the system requirements for installing and running <ph conkeyref="ProductNames/remediate">Puppet Remediate,</ph>, and that you have received your license. ​​</note></p></prereq><steps><step><cmd>On a machine with internet connectivity, download the <ph conkeyref="ProductNames/remediate"/> docker compose file to the same directory of your license, and run the following commands:</cmd><info><p><codeblock translate="no" xml:space="preserve">docker swarm init</codeblock><codeblock translate="no" xml:space="preserve">docker-compose run remediate start --license-file your-license.json</codeblock></p><p>The container images are pulled form the Google Cloud Registry.</p></info></step><step><cmd>Disconnect the machine from the network.</cmd></step><step><cmd>To start or stop running  <ph conkeyref="ProductNames/remediate"/>, run the following commands:</cmd><info><p><codeblock translate="no" xml:space="preserve">docker-compose run remediate start --offline</codeblock><codeblock translate="no" xml:space="preserve">docker-compose run remediate stop</codeblock></p></info></step></steps></taskbody></task>
+<task ditaarch:DITAArchVersion="1.2" id="pre-air-gapped-install"
+    xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title>On a machine planned for an air-gap</title>
+    <shortdesc/>
+    <prolog>
+        <author translate="no" type="creator">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author>
+    </prolog>
+    <taskbody>
+        <prereq><p><note type="note">Make sure your machine meets the system requirements for
+                    installing and running <ph conkeyref="ProductNames/remediate">Puppet
+                        Remediate,</ph>, and that you have received your license.
+            ​​</note></p></prereq>
+        <steps>
+            <step>
+                <cmd>On a machine with internet connectivity, download the <ph
+                        conkeyref="ProductNames/remediate"/> docker compose file to the same
+                    directory of your license, and run the following commands:</cmd>
+                <info><p><codeblock translate="no" xml:space="preserve">docker swarm init</codeblock><codeblock translate="no" xml:space="preserve">docker-compose run remediate start --license-file your-license.json</codeblock></p><p>The
+                        container images are pulled form the Google Cloud Registry.</p></info>
+            </step>
+            <step>
+                <cmd>Disconnect the machine from the network.</cmd>
+            </step>
+            <step>
+                <cmd>To start or stop running <ph conkeyref="ProductNames/remediate"/>, run the
+                    following commands:</cmd>
+                <info><p><codeblock translate="no" xml:space="preserve">docker-compose run remediate start --offline</codeblock><codeblock translate="no" xml:space="preserve">docker-compose run remediate stop</codeblock></p></info>
+            </step>
+        </steps>
+    </taskbody>
+</task>

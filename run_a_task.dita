@@ -4,9 +4,10 @@
     <title>Run a task</title>
     <shortdesc/>
     <prolog>
-        <author type="creator" translate="no">Claire Cadman &lt;claire.cadman@puppet.com&gt;</author>
+        <author translate="no" type="creator">Claire Cadman
+            &lt;claire.cadman@puppet.com&gt;</author>
     </prolog>
-    
+
     <taskbody>
         <context>
             <p/>

@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="running-shell-commands" domains="(topic concept)                            (topic hi-d)                            (topic ut-d)                            (topic indexing-d)                             (topic pr-d)                            (topic sw-d)                            (topic ui-d)   " ditaarch:DITAArchVersion="1.2"><title>Running shell commands</title><shortdesc>Execute an arbitrary shell command on vulnerable nodes without installing an agent.</shortdesc><prolog><author type="creator" translate="no">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author></prolog><conbody><p><table conref="conref_tasks_reference.dita#conref-tasks-reference/table-1560417715023"><tgroup cols="1">
-    <tbody>
-        <row>
-            <entry/>
-        </row>
-    </tbody>
-</tgroup></table></p></conbody></concept>
+<concept ditaarch:DITAArchVersion="1.2" id="running-shell-commands"
+    xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title>Running shell commands</title>
+    <shortdesc>Execute an arbitrary shell command on vulnerable nodes without installing an
+        agent.</shortdesc>
+    <prolog>
+        <author translate="no" type="creator">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author>
+    </prolog>
+    <conbody>
+        <p><table conref="conref_tasks_reference.dita#conref-tasks-reference/table-1560417715023">
+                <tgroup cols="1">
+                    <tbody>
+                        <row>
+                            <entry/>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table></p>
+    </conbody>
+</concept>

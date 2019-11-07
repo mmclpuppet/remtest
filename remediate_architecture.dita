@@ -1,11 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" ditaarch:DITAArchVersion="1.2" domains="(topic concept)                            (topic hi-d)                            (topic ut-d)                            (topic indexing-d)                             (topic pr-d)                            (topic sw-d)                            (topic ui-d)   " id="remediate-architecture"><title>Architecture GH DESKTOP</title><shortdesc><ph conkeyref="ProductNames/remediate_long"/> consists of a number of components and services, each one running as an individual Docker container.</shortdesc><prolog><author translate="no" type="creator">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author></prolog><conbody><image placement="break" href="arch.png"/><p><table><tgroup cols="3"><thead><row><entry>Service</entry><entry>Container</entry><entry>Description</entry></row></thead><tbody><row><entry>Licensing</entry><entry><codeph translate="no">remediate_licensing</codeph></entry><entry>Stores the user licensing information and is queried by the UI using the licensing API.</entry></row><row><entry>Ingress</entry><entry><codeph translate="no">remediate_frontdoor</codeph></entry><entry>The nginx front end listening on port 8443 (HTTPS). </entry></row><row><entry>VR</entry><entry><codeph translate="no">remediate_vr</codeph></entry><entry>Connects to and retrieves host and vulnerability data from Tenable, Qualys and Rapid7.</entry></row><row><entry>Storage</entry><entry><codeph translate="no">remediate_storage</codeph></entry><entry>The storage layer for discovered data which communicates with the <codeph translate="no">remediate_gopdp</codeph> container on port 5432. </entry></row><row><entry>Identity</entry><entry><codeph translate="no">remediate_identity</codeph></entry><entry>Generates the bearer token for the default user roles: <codeph translate="no">admin</codeph> and <codeph translate="no">viewer</codeph>. </entry></row><row><entry>Export</entry><entry><codeph translate="no">remediate_export</codeph></entry><entry>The export service consumes API requests from the UI on port 9200 (HTTPS) and queries the data platform on port 8082 (GRPC).</entry></row><row><entry>gopdp</entry><entry><codeph translate="no">remediate_gopdp</codeph></entry><entry>The data platform is an ingest service implementation that processes 
-discovered data from the edge on port 8082 (GRPC), and exposes the query
- API to the UI on port 8084.</entry></row><row><entry>Controller</entry><entry><codeph translate="no">remediate_controller</codeph></entry><entry>The controller manages the discovery process by:<ul><li><p>Authenticating each API request by validating the bearer token with remediate_identity on port 5556 (HTTPS).</p></li><li><p>Retrieving source and host credentials from the vault on port 8200 (HTTPS).</p></li><li><p>Consuming the discovery and task API requests from the UI on port 9999 (HTTPS).</p></li><li><p>Dispatching discovery and task commands to the edge on port 8081 (GRPC).</p></li></ul></entry></row><row><entry>Edge</entry><entry><codeph translate="no">remediate_edge</codeph></entry><entry>The edge consumes the discovery API requests from the controller and 
-invokes each source the user adds. It discovers vulnerabilities, resources, executes ad hoc tasks on target hosts, and submits data to 
-the data platform. The edge services consist of a set of pluggable 
-providers that are determined by which sources are added. </entry></row><row><entry>Vault</entry><entry><codeph translate="no">remediate_vault</codeph></entry><entry>The secure store for source and node credentials.</entry></row><row><entry>UI</entry><entry><codeph translate="no">remediate_ui</codeph></entry><entry>The UI enables you to add sources, credentials, and run tasks on target hosts by initiating
-        discovery API requests to the controller on port 9999 (HTTPS). To populate the dashboards
-        and provide a high-level summary view of your infrastructure, the UI queries the data
-        platform on port 8084 (HTTPS) for vulnerabilities and discovered resources.</entry></row></tbody></tgroup></table></p></conbody></concept>
+<concept ditaarch:DITAArchVersion="1.2" id="remediate-architecture"
+        xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+        <title>Architecture GH DESKTOP</title>
+        <shortdesc><ph conkeyref="ProductNames/remediate_long"/> consists of a number of components
+                and services, each one running as an individual Docker container.</shortdesc>
+        <prolog>
+                <author translate="no" type="creator">Eamonn Smith
+                        &lt;eamonn.smith@puppet.com&gt;</author>
+        </prolog>
+        <conbody>
+                <image href="arch.png" placement="break"/>
+                <p><table>
+                                <tgroup cols="3">
+                                        <thead>
+                                                <row>
+                                                  <entry>Service</entry>
+                                                  <entry>Container</entry>
+                                                  <entry>Description</entry>
+                                                </row>
+                                        </thead>
+                                        <tbody>
+                                                <row>
+                                                  <entry>Licensing</entry>
+                                                  <entry><codeph translate="no"
+                                                  >remediate_licensing</codeph></entry>
+                                                  <entry>Stores the user licensing information and
+                                                  is queried by the UI using the licensing
+                                                  API.</entry>
+                                                </row>
+                                                <row>
+                                                  <entry>Ingress</entry>
+                                                  <entry><codeph translate="no"
+                                                  >remediate_frontdoor</codeph></entry>
+                                                  <entry>The nginx front end listening on port 8443
+                                                  (HTTPS). </entry>
+                                                </row>
+                                                <row>
+                                                  <entry>VR</entry>
+                                                  <entry><codeph translate="no"
+                                                  >remediate_vr</codeph></entry>
+                                                  <entry>Connects to and retrieves host and
+                                                  vulnerability data from Tenable, Qualys and
+                                                  Rapid7.</entry>
+                                                </row>
+                                                <row>
+                                                  <entry>Storage</entry>
+                                                  <entry><codeph translate="no"
+                                                  >remediate_storage</codeph></entry>
+                                                  <entry>The storage layer for discovered data which
+                                                  communicates with the <codeph translate="no"
+                                                  >remediate_gopdp</codeph> container on port 5432.
+                                                  </entry>
+                                                </row>
+                                                <row>
+                                                  <entry>Identity</entry>
+                                                  <entry><codeph translate="no"
+                                                  >remediate_identity</codeph></entry>
+                                                  <entry>Generates the bearer token for the default
+                                                  user roles: <codeph translate="no">admin</codeph>
+                                                  and <codeph translate="no">viewer</codeph>.
+                                                  </entry>
+                                                </row>
+                                                <row>
+                                                  <entry>Export</entry>
+                                                  <entry><codeph translate="no"
+                                                  >remediate_export</codeph></entry>
+                                                  <entry>The export service consumes API requests
+                                                  from the UI on port 9200 (HTTPS) and queries the
+                                                  data platform on port 8082 (GRPC).</entry>
+                                                </row>
+                                                <row>
+                                                  <entry>gopdp</entry>
+                                                  <entry><codeph translate="no"
+                                                  >remediate_gopdp</codeph></entry>
+                                                  <entry>The data platform is an ingest service
+                                                  implementation that processes discovered data from
+                                                  the edge on port 8082 (GRPC), and exposes the
+                                                  query API to the UI on port 8084.</entry>
+                                                </row>
+                                                <row>
+                                                  <entry>Controller</entry>
+                                                  <entry><codeph translate="no"
+                                                  >remediate_controller</codeph></entry>
+                                                  <entry>The controller manages the discovery
+                                                  process by:<ul>
+                                                  <li><p>Authenticating each API request by
+                                                  validating the bearer token with
+                                                  remediate_identity on port 5556 (HTTPS).</p></li>
+                                                  <li><p>Retrieving source and host credentials from
+                                                  the vault on port 8200 (HTTPS).</p></li>
+                                                  <li><p>Consuming the discovery and task API
+                                                  requests from the UI on port 9999
+                                                  (HTTPS).</p></li>
+                                                  <li><p>Dispatching discovery and task commands to
+                                                  the edge on port 8081 (GRPC).</p></li>
+                                                  </ul></entry>
+                                                </row>
+                                                <row>
+                                                  <entry>Edge</entry>
+                                                  <entry><codeph translate="no"
+                                                  >remediate_edge</codeph></entry>
+                                                  <entry>The edge consumes the discovery API
+                                                  requests from the controller and invokes each
+                                                  source the user adds. It discovers
+                                                  vulnerabilities, resources, executes ad hoc tasks
+                                                  on target hosts, and submits data to the data
+                                                  platform. The edge services consist of a set of
+                                                  pluggable providers that are determined by which
+                                                  sources are added. </entry>
+                                                </row>
+                                                <row>
+                                                  <entry>Vault</entry>
+                                                  <entry><codeph translate="no"
+                                                  >remediate_vault</codeph></entry>
+                                                  <entry>The secure store for source and node
+                                                  credentials.</entry>
+                                                </row>
+                                                <row>
+                                                  <entry>UI</entry>
+                                                  <entry><codeph translate="no"
+                                                  >remediate_ui</codeph></entry>
+                                                  <entry>The UI enables you to add sources,
+                                                  credentials, and run tasks on target hosts by
+                                                  initiating discovery API requests to the
+                                                  controller on port 9999 (HTTPS). To populate the
+                                                  dashboards and provide a high-level summary view
+                                                  of your infrastructure, the UI queries the data
+                                                  platform on port 8084 (HTTPS) for vulnerabilities
+                                                  and discovered resources.</entry>
+                                                </row>
+                                        </tbody>
+                                </tgroup>
+                        </table></p>
+        </conbody>
+</concept>

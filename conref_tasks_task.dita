@@ -1,7 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
-<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                            (topic ut-d)                            (topic indexing-d)                              (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)   " id="conref-tasks-task"><title>conref_tasks_task</title><shortdesc/><prolog><author translate="no" type="creator">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author></prolog><taskbody><context>
+<task ditaarch:DITAArchVersion="1.2" id="conref-tasks-task"
+    xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title>conref_tasks_task</title>
+    <shortdesc/>
+    <prolog>
+        <author translate="no" type="creator">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author>
+    </prolog>
+    <taskbody>
+        <context>
             <p/>
-        </context><steps><step id="step-1560349534006"><cmd>On the sidebar, click <uicontrol>Run tasks</uicontrol>, and select the task:</cmd><choices><choice>Install Puppet agent.</choice><choice>Run a shell command.</choice><choice>Manage package.</choice><choice>Manage service.</choice></choices></step><step id="step-1560349593294"><cmd>Enter the values for the task parameters (see below).</cmd></step><step id="step-1560349612116">
+        </context>
+        <steps>
+            <step id="step-1560349534006">
+                <cmd>On the sidebar, click <uicontrol>Run tasks</uicontrol>, and select the
+                    task:</cmd>
+                <choices>
+                    <choice>Install Puppet agent.</choice>
+                    <choice>Run a shell command.</choice>
+                    <choice>Manage package.</choice>
+                    <choice>Manage service.</choice>
+                </choices>
+            </step>
+            <step id="step-1560349593294">
+                <cmd>Enter the values for the task parameters (see below).</cmd>
+            </step>
+            <step id="step-1560349612116">
                 <cmd>Click <uicontrol>Select nodes</uicontrol>.</cmd>
-            </step><step id="step-1560349631894"><cmd>Select the nodes to run the task on, and click <uicontrol>Select  credentials</uicontrol>.</cmd></step><step id="step-1560349648600"><cmd>Select the  credentials for accessing the hosts, and click <uicontrol>Review task summary</uicontrol>.</cmd></step><step id="step-1560349670329"><cmd>Review the tasks details, your  credentials,  the list of target nodes, and click <uicontrol>Run task</uicontrol>. </cmd><info><p><note type="tip">To view the status of the task run, on the left hand pane, click <uicontrol>Recent events</uicontrol>. </note></p></info></step></steps></taskbody></task>
+            </step>
+            <step id="step-1560349631894">
+                <cmd>Select the nodes to run the task on, and click <uicontrol>Select
+                        credentials</uicontrol>.</cmd>
+            </step>
+            <step id="step-1560349648600">
+                <cmd>Select the credentials for accessing the hosts, and click <uicontrol>Review
+                        task summary</uicontrol>.</cmd>
+            </step>
+            <step id="step-1560349670329">
+                <cmd>Review the tasks details, your credentials, the list of target nodes, and click
+                        <uicontrol>Run task</uicontrol>. </cmd>
+                <info><p><note type="tip">To view the status of the task run, on the left hand pane,
+                            click <uicontrol>Recent events</uicontrol>. </note></p></info>
+            </step>
+        </steps>
+    </taskbody>
+</task>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="package-attributes" ditaarch:DITAArchVersion="1.2"><title>Package attributes</title><shortdesc>Discover various types of information
+            about a package instance, its attributes, along with a list of hosts and containers it's installed on. 
+         </shortdesc><prolog><author type="creator" translate="no">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author></prolog><conbody><p>Discover attributes that describe  the  characteristics of the package. The UI queries the data platform to discover  the <codeph translate="no">name</codeph>, <codeph translate="no">version</codeph>, and <codeph translate="no">packageManager</codeph> attributes.
+
+      
+
+            </p><p><simpletable><sthead><stentry>Attribute</stentry><stentry>Description</stentry></sthead><strow><stentry>
+                     <codeph translate="no">name</codeph>
+                  </stentry><stentry>The package name.</stentry></strow><strow><stentry>
+                     <codeph translate="no">version</codeph>
+                  </stentry><stentry>The package version.</stentry></strow><strow><stentry>
+                     <codeph translate="no">packageManager</codeph>
+                  </stentry><stentry>The name of the package manager: 
+
+                     
+
+                     <ul><li>
+                           <p>
+                              <codeph translate="no">apk</codeph>
+                           </p>
+                        </li><li>
+                           <p>
+                              <codeph translate="no">Chocolatey</codeph>
+                           </p>
+                        </li><li>
+                           <p>
+                              <codeph translate="no">dpkg</codeph>
+                           </p>
+                        </li><li>
+                           <p>
+                              <codeph translate="no">rpm</codeph>
+                           </p>
+                        </li><li>
+                           <p>
+                              <codeph translate="no">msi</codeph>
+                           </p>
+                        </li></ul></stentry></strow></simpletable></p></conbody></concept>

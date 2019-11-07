@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
-<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="conref-filter-task" domains="(topic task)                            (topic hi-d)                            (topic ut-d)                            (topic indexing-d)                              (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)   " ditaarch:DITAArchVersion="1.2">
+<task ditaarch:DITAArchVersion="1.2" id="conref-filter-task"
+    xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
     <title>conref_filter_task</title>
     <shortdesc/>
     <prolog>
-        <author type="creator" translate="no">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author>
+        <author translate="no" type="creator">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author>
     </prolog>
     <taskbody>
         <context>

@@ -1,3 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" ditaarch:DITAArchVersion="1.2" domains="(topic concept)                            (topic hi-d)                            (topic ut-d)                            (topic indexing-d)                             (topic pr-d)                            (topic sw-d)                            (topic ui-d)   " id="release_notes"><title>Release notes</title><shortdesc>New features, enhancements, resolved issues, and known issues for <ph conkeyref="ProductNames/remediate_long"/> 1.x release series.</shortdesc><prolog><author translate="no" type="creator">Claire Cadman &lt;claire.cadman@puppet.com&gt;</author></prolog><conbody><section><title>Version 1.0.1</title><p>Released 1 August 2019.</p><p>This is the initial release of <ph conkeyref="ProductNames/remediate"/>.</p><p>Known issues:</p><ul><li><p> <b>Unable to install <ph conkeyref="ProductNames/remediate"/> on Debian8 with the default kernel module.</b> Upgrade to Kernal 4.9 and install <ph conkeyref="ProductNames/remediate"/> again.</p></li><li><p> <b>NET Scan discovered resources being shown as cloud instances.</b> If you discover a vmpooler box via a netscan provider it will be counted as a top cloud instance by region.</p></li><li><p> <b>Due to inconsistent DNS lookups, tasks fail to run on discovered hosts</b>. When discovered hosts are running on the same domain, an inconsistent DNS lookup between discovering hosts and running tasks on discovered hosts results in tasks failing.</p></li><li><p> <b>In a multi-network environment, the first discovery run might not identify the IP or hostname</b>. Wait for the second discovery run, which happens automatically after four hours. </p></li></ul></section></conbody></concept>
+<concept ditaarch:DITAArchVersion="1.2" id="release_notes"
+    xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title>Release notes</title>
+    <shortdesc>New features, enhancements, resolved issues, and known issues for <ph
+            conkeyref="ProductNames/remediate_long"/> 1.x release series.</shortdesc>
+    <prolog>
+        <author translate="no" type="creator">Claire Cadman
+            &lt;claire.cadman@puppet.com&gt;</author>
+    </prolog>
+    <conbody>
+        <section><title>Version 1.0.1</title><p>Released 1 August 2019.</p><p>This is the initial
+                release of <ph conkeyref="ProductNames/remediate"/>.</p><p>Known issues:</p><ul>
+                <li><p>
+                        <b>Unable to install <ph conkeyref="ProductNames/remediate"/> on Debian8
+                            with the default kernel module.</b> Upgrade to Kernal 4.9 and install
+                            <ph conkeyref="ProductNames/remediate"/> again.</p></li>
+                <li><p>
+                        <b>NET Scan discovered resources being shown as cloud instances.</b> If you
+                        discover a vmpooler box via a netscan provider it will be counted as a top
+                        cloud instance by region.</p></li>
+                <li><p>
+                        <b>Due to inconsistent DNS lookups, tasks fail to run on discovered
+                            hosts</b>. When discovered hosts are running on the same domain, an
+                        inconsistent DNS lookup between discovering hosts and running tasks on
+                        discovered hosts results in tasks failing.</p></li>
+                <li><p>
+                        <b>In a multi-network environment, the first discovery run might not
+                            identify the IP or hostname</b>. Wait for the second discovery run,
+                        which happens automatically after four hours. </p></li>
+            </ul></section>
+    </conbody>
+</concept>

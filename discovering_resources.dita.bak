@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="discovering-resources" ditaarch:DITAArchVersion="1.2">
+ <title>Discovering resources</title>
+ <shortdesc>Discover node resources running on your infrastructure source account. Add your node
+  credentials and discover node attributes, the system services, the users and groups belonging to
+  each node, along with packages, tags, and containers.</shortdesc>
+ <prolog>
+  <author type="creator" translate="no">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author>
+ </prolog>
+ <conbody>
+  <p/>
+  <section><title>What resources can I discover?</title><p>Depending on the level of credentials you
+    enter, this table lists the depth of resources that you can discover. </p><p><table>
+     <tgroup cols="2">
+      <colspec colname="c1" colnum="1"/>
+      <colspec colname="c2" colnum="2"/>
+      <thead>
+       <row>
+        <entry colname="c1">Sources and credentials</entry>
+        <entry colname="c2">Discovered resources</entry>
+       </row>
+      </thead>
+      <tbody>
+       <row>
+        <entry colname="c1"><ul>
+          <li><p>Infrastructure source.</p></li>
+         </ul></entry>
+        <entry colname="c2"><ul>
+          <li><p>Nodes, including node attributes.</p></li>
+         </ul></entry>
+       </row>
+       <row>
+        <entry colname="c1"><ul>
+          <li><p>Infrastructure source.</p></li>
+          <li><p>SSH or WinRM credentials.</p></li>
+         </ul></entry>
+        <entry colname="c2"><ul>
+          <li><p>Nodes, including node attributes.</p></li>
+          <li><p>Services</p></li>
+          <li><p>Users</p></li>
+          <li><p>Groups</p></li>
+          <li><p>Tags</p></li>
+          <li><p>Packages, including package attributes.</p></li>
+          <li><p>Container images, including container attributes.</p></li>
+         </ul></entry>
+       </row>
+      </tbody>
+     </tgroup>
+    </table></p></section>
+  <section><title>Nodes</title><p>A number of nodes summary pages give you information about node instances across your entire
+        infrastructure, and each page queries the data platform for specific attributes belonging to
+        each node. For more information on nodes, see <xref href="node_attributes.dita">Node
+          attributes</xref>.<note type="tip">Click a card to drill down and view the detailed list.
+        </note></p><p><table>
+     <tgroup cols="2">
+      <thead>
+       <row>
+        <entry>Node summary page</entry>
+        <entry>Description</entry>
+       </row>
+      </thead>
+      <tbody>
+       <row>
+        <entry>Nodes</entry>
+        <entry>Click the <wintitle>Nodes</wintitle> dashboard card to see a list of on-premises and
+                  cloud nodes running on your infrastructure.  </entry>
+       </row>
+       <row>
+        <entry>Packages</entry>
+        <entry>The total number of packages installed on discovered hosts. </entry>
+       </row>
+       <row>
+        <entry>Inaccessible nodes</entry>
+        <entry>The total number of discovered nodes running on your infrastructure that could not be
+                  accessed due to entering invalid credentials or due to configuration issues.  </entry>
+       </row>
+       <row>
+        <entry>AWS nodes</entry>
+        <entry>Click the <wintitle>AWS nodes</wintitle> dashboard card to see a list of EC2
+                  instances running on your AWS account.  </entry>
+       </row>
+       <row>
+        <entry>VMware nodes</entry>
+        <entry>The total number of nodes running on your VMware vSphere account.  </entry>
+       </row>
+       <row>
+        <entry>OpenStack nodes</entry>
+        <entry>The total number of nodes running on your OpenStack account.  </entry>
+       </row>
+       <row>
+        <entry>Microsoft Azure nodes</entry>
+        <entry>The total number of nodes running on your Microsoft Azure account.  </entry>
+       </row>
+       <row>
+        <entry>Google Cloud Platform nodes</entry>
+        <entry>The total number of nodes running on your GCP account.  </entry>
+       </row>
+       <row>
+        <entry>Nodes with Puppet</entry>
+        <entry>The percentage and total number of discovered nodes with or without Puppet installed,
+                  as well as unknown hosts.  </entry>
+       </row>
+       <row>
+        <entry>Uptime less than 24 hours</entry>
+        <entry>The percentage and total number of nodes with an uptime with less than, or greater
+                  than, 24 hours.  </entry>
+       </row>
+       <row>
+        <entry>Top operating systems</entry>
+        <entry>The top six operating systems installed on discovered hosts.  </entry>
+       </row>
+       <row>
+        <entry>Linux distributions</entry>
+        <entry>The percentage and total number of Linux nodes categorized by the distribution
+                  installed.  </entry>
+       </row>
+       <row>
+        <entry>Windows versions</entry>
+        <entry>The percentage and total number of Windows nodes categorized by the version of
+                  Windows installed.  </entry>
+       </row>
+       <row>
+        <entry>Top cloud instances by region</entry>
+        <entry>The top six cloud instances categorized by region.  </entry>
+       </row>
+       <row>
+        <entry>Top containers by image</entry>
+        <entry>The top six container images used by running containers. </entry>
+       </row>
+      </tbody>
+     </tgroup>
+    </table></p></section>
+  <section><title>Packages</title><p>Click the Packages dashboard card to see a list of packages in
+    use across your infrastructure by name, version, and manager, as well as the number of instances
+    of each package. For more information about packages, see <xref href="package_attributes.dita">Package attributes</xref>.</p></section>
+  <section><title>Containers</title><p>Click the Containers, or the Top containers by image,
+    dashboard card to see a list of container instances running on your infrastructure. For more
+    information about containers, see <xref href="container_attributes.dita">Container
+     attributes</xref>. </p></section>
+ </conbody>
+</concept>

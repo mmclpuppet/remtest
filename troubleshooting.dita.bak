@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="troubleshooting" ditaarch:DITAArchVersion="1.2"><title>Troubleshooting</title><shortdesc>Use this section to troubleshoot issues with your <ph conkeyref="ProductNames/remediate_long"/> installation.</shortdesc><prolog><author type="creator" translate="no">Claire Cadman &lt;claire.cadman@puppet.com&gt;</author></prolog><conbody><section><title>Forgotten password</title><p>We do not currently support resetting individual passwords. If you forget the admin password, you
+                must reset the entire system and re-enter any provider and credential information.
+                To reset, run the following command:
+                <codeblock translate="no" xml:space="preserve">docker-compose run remediate reset</codeblock></p></section><section><title>How to generate and send logs to support</title><p>To generate service logs, create a tarball by running the mayday
+                command:<codeblock translate="no" xml:space="preserve">docker-compose run remediate mayday</codeblock>The
+                tarball contains debug information which the <ph conkeyref="ProductNames/puppet"/>
+                support team uses for troubleshooting. You can send this to support via a Zendesk
+                ticket or email. </p></section><section><title>For general help</title><p>For a list of helpful CLI commands, run the following:
+                <codeblock translate="no" xml:space="preserve">docker-compose run remediate --help</codeblock></p></section></conbody></concept>

@@ -4,7 +4,7 @@
  <title>Getting started</title>
  <shortdesc/>
  <prolog>
-  <author type="creator" translate="no">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author>
+  <author translate="no" type="creator">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author>
  </prolog>
 
  <conbody>

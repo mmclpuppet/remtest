@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
-<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="run-tasks-discovered-nodes" domains="(topic task)                            (topic hi-d)                            (topic ut-d)                            (topic indexing-d)                              (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)   " ditaarch:DITAArchVersion="1.2"><title>Run tasks</title><shortdesc>Run ad hoc tasks on target nodes to upgrade packages, restart services, execute shell commands, or perform any other type of single-action executions on your nodes.</shortdesc><prolog><author type="creator" translate="no">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author></prolog><taskbody><context>
-            <p>Tasks are similar to scripts, but they are kept in modules and can have metadata. For more information, see <xref href="https://puppet.com/docs/puppet/latest/puppet_tasks.html" scope="external">Bolt tasks</xref>. </p><p>When selecting to run a task from either a details or listing page, some of the
-                selected nodes might not be eligible to run the task on. An eligible node must be
-                accessible using the SSH or WinRM credentials you added, or if running the install
-                    <ph conkeyref="ProductNames/puppet"/> agent task, an eligible node doesn't have
-                the agent installed.</p>
-        </context><steps><step conref="conref_tasks_task.dita#conref-tasks-task/step-1560349534006"><cmd/></step><step conref="conref_tasks_task.dita#conref-tasks-task/step-1560349593294"><cmd/></step><step conref="conref_tasks_task.dita#conref-tasks-task/step-1560349612116"><cmd/></step><step conref="conref_tasks_task.dita#conref-tasks-task/step-1560349631894"><cmd/></step><step conref="conref_tasks_task.dita#conref-tasks-task/step-1560349648600"><cmd/></step><step conref="conref_tasks_task.dita#conref-tasks-task/step-1560349670329"><cmd/></step></steps></taskbody></task>
+<task ditaarch:DITAArchVersion="1.2" id="run-tasks-discovered-nodes"
+    xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title>Run tasks</title>
+    <shortdesc>Run ad hoc tasks on target nodes to upgrade packages, restart services, execute shell
+        commands, or perform any other type of single-action executions on your nodes.</shortdesc>
+    <prolog>
+        <author translate="no" type="creator">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author>
+    </prolog>
+    <taskbody>
+        <context>
+            <p>Tasks are similar to scripts, but they are kept in modules and can have metadata. For
+                more information, see <xref
+                    href="https://puppet.com/docs/puppet/latest/puppet_tasks.html" scope="external"
+                    >Bolt tasks</xref>. </p><p>When selecting to run a task from either a details or
+                listing page, some of the selected nodes might not be eligible to run the task on.
+                An eligible node must be accessible using the SSH or WinRM credentials you added, or
+                if running the install <ph conkeyref="ProductNames/puppet"/> agent task, an eligible
+                node doesn't have the agent installed.</p>
+        </context>
+        <steps>
+            <step conref="conref_tasks_task.dita#conref-tasks-task/step-1560349534006">
+                <cmd/>
+            </step>
+            <step conref="conref_tasks_task.dita#conref-tasks-task/step-1560349593294">
+                <cmd/>
+            </step>
+            <step conref="conref_tasks_task.dita#conref-tasks-task/step-1560349612116">
+                <cmd/>
+            </step>
+            <step conref="conref_tasks_task.dita#conref-tasks-task/step-1560349631894">
+                <cmd/>
+            </step>
+            <step conref="conref_tasks_task.dita#conref-tasks-task/step-1560349648600">
+                <cmd/>
+            </step>
+            <step conref="conref_tasks_task.dita#conref-tasks-task/step-1560349670329">
+                <cmd/>
+            </step>
+        </steps>
+    </taskbody>
+</task>

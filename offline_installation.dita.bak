@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="offline-installation" ditaarch:DITAArchVersion="1.2"><title>Offline install</title><shortdesc>Install <ph conkeyref="ProductNames/remediate">Puppet Remediate</ph> on an air-gapped machine or a machine you plan to air-gap.</shortdesc><prolog><author type="creator" translate="no">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author></prolog><conbody><p/></conbody></concept>

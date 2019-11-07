@@ -1,7 +1,900 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="node-attributes" domains="(topic concept)                            (topic hi-d)                            (topic ut-d)                            (topic indexing-d)                             (topic pr-d)                            (topic sw-d)                            (topic ui-d)   " ditaarch:DITAArchVersion="1.2"><title>Node attributes</title><shortdesc>Puppet Remediate considers each node as a network accessible resource, whether it's physical or virtual, and discovers attributes that define the host's state and properties.</shortdesc><prolog><author type="creator" translate="no">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author></prolog><conbody><p/><section><title>Amazon Web Services</title><p>Discover EC2 instances running on your AWS account, including instance attributes, packages, and containers.</p><p><table><tgroup cols="3"><thead><row><entry>Attribute</entry><entry>Facet::attribute</entry><entry>Description</entry></row></thead><tbody><row><entry>AMI Name</entry><entry><codeph translate="no">aws_ec2Instance::name</codeph></entry><entry>The  name of the Amazon Machine Image (AMI).</entry></row><row><entry>Availability zone </entry><entry><codeph translate="no">aws_ec2Instance::Placement_AvailabilityZone</codeph></entry><entry>The availability zone of the instance.</entry></row><row><entry>Creation Date</entry><entry><codeph translate="no">aws_ec2Instance::CreationDate</codeph></entry><entry>The date and time the resource was created.</entry></row><row><entry>Description</entry><entry><codeph translate="no">aws_ec2Instance::Description</codeph></entry><entry>The description of the image. </entry></row><row><entry>Image type</entry><entry><codeph translate="no">aws_ec2Instance::imageType</codeph></entry><entry>The type of image:<ul><li><p><codeph translate="no">machine</codeph></p></li><li><p><codeph translate="no">kernel</codeph></p></li><li><p><codeph translate="no">ramdisk</codeph></p></li></ul></entry></row><row><entry>Instance type</entry><entry><codeph translate="no">aws_ec2Instance::InstanceType</codeph></entry><entry>The instance type.</entry></row><row><entry>Key name</entry><entry><codeph translate="no">aws_ec2Instance::KeyName</codeph></entry><entry>The name of the key pair.</entry></row><row><entry>Launch time</entry><entry><codeph translate="no">aws_ec2Instance::LaunchTime</codeph></entry><entry>The date and time the resource was launched.</entry></row><row><entry>Name</entry><entry><codeph translate="no">host::name</codeph></entry><entry>The name of the host. </entry></row><row><entry>Operating system</entry><entry><codeph translate="no">computeHost::os</codeph></entry><entry>The operating system  running on the instance.</entry></row><row><entry>OS version</entry><entry><codeph translate="no">computeHost::osVersion</codeph></entry><entry>The version of the operating system running on the instance.</entry></row><row><entry>Owner ID</entry><entry><codeph translate="no">aws_ec2Instance::OwnerId</codeph></entry><entry>The account ID of the image owner.</entry></row><row><entry>Private DNS Name</entry><entry><codeph translate="no">aws_ec2Instance::PrivateDnsName</codeph></entry><entry>The private DNS name.</entry></row><row><entry>Private IP address</entry><entry><codeph translate="no">aws_ec2Instance::PrivateIpAddress</codeph></entry><entry>The private IP version 4 address.</entry></row><row><entry>Public DNS Name</entry><entry><codeph translate="no">aws_ec2Instance::PublicDnsName</codeph></entry><entry>Fully qualified public DNS hostname.</entry></row><row><entry>Public IP address</entry><entry><codeph translate="no">aws_ec2Instance::PublicIpAddress</codeph></entry><entry>The public IP version 4 address.</entry></row><row><entry>Region</entry><entry><codeph translate="no">cloudResource::region</codeph></entry><entry>The region where the instance exists.</entry></row><row><entry>Security groups</entry><entry><codeph translate="no">aws_ec2Instance::SecurityGroups</codeph></entry><entry>The security group associated with the instance.</entry></row><row><entry>State</entry><entry><codeph translate="no">aws_ec2Instance::Monitoring_State</codeph></entry><entry>Indicates whether monitoring is enabled:<ul><li><p><codeph translate="no">disabled</codeph></p></li><li><p><codeph translate="no">disabling</codeph></p></li><li><p><codeph translate="no">enabled</codeph></p></li><li><p><codeph translate="no">pending</codeph></p></li></ul></entry></row><row><entry>Status</entry><entry><codeph translate="no">cloudResource_status</codeph></entry><entry>The current status of the instance. </entry></row><row><entry>State transition reason</entry><entry><codeph translate="no">aws_ec2Instance::StateTransitionReason</codeph></entry><entry>Describes the state change.</entry></row><row><entry>Subnet ID</entry><entry><codeph translate="no">aws_ec2Instance::SubnetId</codeph></entry><entry>The ID of the subnet.</entry></row><row><entry>Tags</entry><entry><codeph translate="no">tags::name</codeph><lines xml:space="preserve"><codeph translate="no">tags::value</codeph></lines></entry><entry>The tag assigned to the AWS resource.</entry></row><row><entry>Uptime</entry><entry><codeph translate="no">computeHost::uptime</codeph></entry><entry>The uptime for the instance, in seconds. </entry></row><row><entry>VM Image</entry><entry><codeph translate="no">vm::image</codeph></entry><entry>The image identification number.</entry></row><row><entry>VM key name</entry><entry><codeph translate="no">vm::keyName</codeph></entry><entry>The unique identifier for the file in  storage.</entry></row><row><entry>VM virtualization type</entry><entry><codeph translate="no">vm::virtualizationType</codeph></entry><entry>The virtualization type:<ul><li><p><codeph translate="no">pv</codeph></p></li><li><p><codeph translate="no">hvm</codeph></p></li></ul> </entry></row><row><entry>VPC ID</entry><entry><codeph translate="no">aws_ec2Instance::VpcId</codeph></entry><entry>The identification for the Virtual Private Cloud (VPC). </entry></row></tbody></tgroup></table></p></section><section><title>Microsoft Azure</title><p>Discover compute instances running on your Azure account, including instance attributes, packages, and containers.</p><p><table><tgroup cols="3"><thead><row><entry>Attribute</entry><entry>Facet::attribute</entry><entry>Description</entry></row></thead><tbody><row><entry>Created at</entry><entry><codeph translate="no">azure_computeInstance::Created</codeph></entry><entry>The date and time the resource was created.</entry></row><row><entry>Data disks</entry><entry><codeph translate="no">azure_computeInstance::DataDisks</codeph></entry><entry>The parameters used to add the data disk to the virtual machine. </entry></row><row><entry>ID</entry><entry><codeph translate="no">azure_computeInstance::ID</codeph></entry><entry>The resource ID.</entry></row><row><entry>Image</entry><entry><codeph translate="no">azure_computeInstance::Image</codeph></entry><entry>The virtual machine image. </entry></row><row><entry>Instance type</entry><entry><codeph translate="no">azure_computeInstance::InstanceType</codeph></entry><entry>The type of instance. </entry></row><row><entry>IP address</entry><entry><codeph translate="no">host::privateIPv4</codeph></entry><entry>The private IP version 4 address.</entry></row><row><entry>Key name</entry><entry><codeph translate="no">azure_computeInstance::KeyName</codeph></entry><entry>The keypair name. </entry></row><row><entry>Last scan</entry><entry/><entry>The Last scan of the host represented by the data platform timestamp in UTC.</entry></row><row><entry>Location</entry><entry><codeph translate="no">azure_computeInstance::Location</codeph></entry><entry>The location of the resource.</entry></row><row><entry>MAC address</entry><entry><codeph translate="no">azure_computeInstance::MacAddress</codeph></entry><entry>The MAC address assigned to the resource. </entry></row><row><entry>Name</entry><entry><codeph translate="no">host::name</codeph></entry><entry>The name of the host. </entry></row><row><entry>Operating system</entry><entry><codeph translate="no">computeHost::os</codeph></entry><entry>The operating system  running on the host.</entry></row><row><entry>OS disk</entry><entry><codeph translate="no">azure_computeInstance::OSDisk</codeph></entry><entry>The name of the operating system used by the virtual machine.</entry></row><row><entry>OS version</entry><entry><codeph translate="no">computeHost::osVersion</codeph></entry><entry>The version of the operating system running on the host.</entry></row><row><entry>Puppet version</entry><entry><codeph translate="no">computeHost::puppetVersion</codeph></entry><entry>The version of Puppet installed.</entry></row><row><entry>Resource group</entry><entry><codeph translate="no">azure_computeInstance::ResourceGroup</codeph></entry><entry>The name of the resource group. </entry></row><row><entry>Size</entry><entry><codeph translate="no">azure_computeInstance::VMSize</codeph></entry><entry>The size type of the virtual machine. </entry></row><row><entry>Status</entry><entry><codeph translate="no">azure_computeInstance::Status</codeph></entry><entry>The status of the virtual machine. </entry></row><row><entry>Subscription ID</entry><entry><codeph translate="no">azure_computeInstance::SubscriptionID</codeph></entry><entry>The subscription ID. </entry></row><row><entry>Tags</entry><entry><codeph translate="no">azure_computeInstance::Tags</codeph></entry><entry>A list of tags relevant to the content of the image. </entry></row><row><entry>Uptime</entry><entry><codeph translate="no">computeHost::Uptime</codeph></entry><entry>The uptime for the host, in seconds.</entry></row></tbody></tgroup></table></p></section><section><title>OpenStack</title><p>Discover hosts running on your OpenStack account, including host attributes, packages, and containers.</p><p><table><tgroup cols="3"><thead><row><entry>Attribute</entry><entry>Facet::attribute</entry><entry>Description</entry></row></thead><tbody><row><entry>Server ID</entry><entry><codeph translate="no">os_compute::ServerID</codeph></entry><entry>The UUID of the server.</entry></row><row><entry>Name</entry><entry><codeph translate="no">host::hostname</codeph></entry><entry/></row><row><entry>IP address</entry><entry><codeph translate="no">host::privateIPv4</codeph></entry><entry>The private IP version 4 address.</entry></row><row><entry>Operating system</entry><entry><codeph translate="no">computeHost::os</codeph></entry><entry>The operating system  running on the host.</entry></row><row><entry>OS version</entry><entry><codeph translate="no">computeHost::osVersion</codeph></entry><entry>The version of the operating system running on the host.</entry></row><row><entry>Uptime</entry><entry><codeph translate="no">computeHost::uptime</codeph></entry><entry>The uptime for the host, in seconds.</entry></row><row><entry>Last scan</entry><entry/><entry>The Last scan of the host represented by the data platform timestamp in UTC.</entry></row><row><entry>Puppet version</entry><entry><codeph translate="no">computeHost::puppetVersio</codeph>n</entry><entry>The version of Puppet installed.</entry></row><row><entry>Created on</entry><entry><codeph translate="no">os_compute::ServerCreated</codeph></entry><entry>The date and time the resource was created.</entry></row><row><entry>Server Name</entry><entry><codeph translate="no">os_compute::ServerName</codeph></entry><entry>The server name. </entry></row><row><entry>Flavor</entry><entry><codeph translate="no">os_compute::FlavorName</codeph></entry><entry>The display name of the flavor.</entry></row><row><entry>Image name</entry><entry><codeph translate="no">os_compute::ImageName</codeph></entry><entry>The display name of the image.</entry></row><row><entry>Status</entry><entry><codeph translate="no">os_compute::ServerStatus</codeph></entry><entry>The current server state.</entry></row><row><entry>Security groups</entry><entry><codeph translate="no">os_compute::security_groups</codeph></entry><entry>The security group names.</entry></row><row><entry>VCPUs</entry><entry><codeph translate="no">os_compute::vcpus</codeph></entry><entry>The number of virtual CPUs in use.</entry></row><row><entry>RAM (MB)</entry><entry><codeph translate="no">os_compute::ram</codeph></entry><entry>The RAM (MB) on  the virtual machine.</entry></row><row><entry>Disk (GB)</entry><entry><codeph translate="no">os_compute::disk</codeph></entry><entry>The disk size (GB) on the virtual machine.</entry></row><row><entry>Key name</entry><entry><codeph translate="no">os_compute::key_name</codeph></entry><entry>The keypair name. </entry></row><row><entry>IP addresses</entry><entry><codeph translate="no">os_compute::ServerAddresses</codeph></entry><entry>The IP addresses assigned to the virtual machine. </entry></row><row><entry>Metadata</entry><entry><codeph translate="no">os_compute::ServerMetadata</codeph></entry><entry>Custom server metadata at server launch time.</entry></row></tbody></tgroup></table></p></section><section><title>Google Cloud Platform</title><p>Discover compute engine  instances running on your GCP account, including instance attributes, packages, and containers.</p><p><simpletable><sthead><stentry>Attribute</stentry><stentry>Description</stentry></sthead><strow><stentry><codeph translate="no">createTime</codeph></stentry><stentry>The date and time the resource was created.</stentry></strow><strow><stentry><codeph translate="no">hostname</codeph></stentry><stentry>The name of the host. </stentry></strow><strow><stentry><codeph translate="no">id</codeph></stentry><stentry>The ID of the instance.</stentry></strow><strow><stentry><codeph translate="no">image</codeph></stentry><stentry>The image identification number used by your cloud source.</stentry></strow><strow><stentry><codeph translate="no">name</codeph></stentry><stentry>The resource name.</stentry></strow><strow><stentry><codeph translate="no">os</codeph></stentry><stentry>The operating system  running on the host.</stentry></strow><strow><stentry><codeph translate="no">osKernel</codeph></stentry><stentry>The type of kernel running in the operating system: <codeph translate="no">Linux</codeph> or <codeph translate="no">Windows</codeph>.</stentry></strow><strow><stentry><codeph translate="no">osVersion</codeph></stentry><stentry>The version of the operating system running on the host.</stentry></strow><strow><stentry><codeph translate="no">preemptible</codeph></stentry><stentry>Indicates whether it is an instance that can be temporarily interrupted: <codeph translate="no">true</codeph> or <codeph translate="no">false</codeph>.</stentry></strow><strow><stentry><codeph translate="no">privateIPv4</codeph></stentry><stentry>The private IP version 4 address.</stentry></strow><strow><stentry><codeph translate="no">provider</codeph></stentry><stentry>The name of the cloud provider: <codeph translate="no">Google Cloud Platform</codeph>.</stentry></strow><strow><stentry><codeph translate="no">publicIPv4</codeph></stentry><stentry>The IP version 4 address.</stentry></strow><strow><stentry><codeph translate="no">puppetInstalled</codeph></stentry><stentry>The indicator on whether Puppet is installed.</stentry></strow><strow><stentry><codeph translate="no">puppetVersion</codeph></stentry><stentry>The version of Puppet installed.</stentry></strow><strow><stentry><codeph translate="no">region</codeph></stentry><stentry>The region where the host exists.</stentry></strow><strow><stentry><codeph translate="no">status</codeph></stentry><stentry>The current status of the host. </stentry></strow><strow><stentry><codeph translate="no">tags</codeph></stentry><stentry>The tags, containing metadata, assigned to the instance. </stentry></strow><strow><stentry><codeph translate="no">uptime</codeph></stentry><stentry>The uptime for the host, in seconds. </stentry></strow></simpletable></p></section><section><title>VMware vSphere</title><p>Discover ESXi nodes running on your VMware vSphere account, including node attributes, packages, and containers.</p><p><table><tgroup cols="3"><thead><row><entry>Field</entry><entry>Facet::attribute</entry><entry>Description</entry></row></thead><tbody><row><entry>Annotation</entry><entry><codeph translate="no">vmware_computeInstance::Config_Annotation</codeph></entry><entry>Description for the virtual machine.
-      </entry></row><row><entry>Disk</entry><entry><codeph translate="no">vmware_computeInstance::Disk</codeph></entry><entry>Guest information about disks; used space and total space available. </entry></row><row><entry>Fault tolerance state</entry><entry><codeph translate="no">vmware_computeInstance::Runtime_FaultToleranceState</codeph></entry><entry>Defines a  set of states for a
- fault tolerant virtual machine:<ul><li><p><codeph translate="no">disabled</codeph></p></li><li><p><codeph translate="no">enabled</codeph></p></li><li><p><codeph translate="no">needSecondary</codeph></p></li><li><p><codeph translate="no">notConfigured</codeph></p></li><li><p><codeph translate="no">running</codeph></p></li><li><p><codeph translate="no">starting</codeph></p></li></ul></entry></row><row><entry>Guest full name</entry><entry><codeph translate="no">vmware_computeInstance::GuestFullName</codeph></entry><entry>The  full name of the guest operating system for  the virtual machine.</entry></row><row><entry>Guest hostname</entry><entry><codeph translate="no">vmware_computeInstance::HostName</codeph></entry><entry>The FDQN of the guest host. </entry></row><row><entry>Guest heartbeat status</entry><entry><codeph translate="no">vmware_computeInstance::QuickStats</codeph></entry><entry>The current status of the guest operating system:<ul><li><p><codeph translate="no">gray</codeph> - VMware tools not installed or running.</p></li><li><p><codeph translate="no">red</codeph> - No heartbeat.</p></li><li><p><codeph translate="no">yellow</codeph> - Intermittent heartbeat.</p></li><li><p><codeph translate="no">green</codeph> - Guest operating system responding normally.</p></li></ul></entry></row><row><entry>Guest state</entry><entry><codeph translate="no">vmware_computeInstance::GuestState</codeph></entry><entry>Operation mode of the guest operating system:<ul><li><p><codeph translate="no">running</codeph></p></li><li><p><codeph translate="no">shuttingdown</codeph></p></li><li><p><codeph translate="no">resetting</codeph></p></li><li><p><codeph translate="no">standby</codeph></p></li><li><p><codeph translate="no">notrunning</codeph></p></li><li><p><codeph translate="no">unknown</codeph></p></li></ul>
-  </entry></row><row><entry>ID</entry><entry><codeph translate="no">vmware_computeInstance::ID</codeph></entry><entry>The guest operating system identifier.</entry></row><row><entry>IP address</entry><entry><codeph translate="no">host::privateIPv4</codeph></entry><entry>The private IP version 4 address.</entry></row><row><entry>IP stack</entry><entry><codeph translate="no">vmware_computeInstance::IpStack</codeph></entry><entry>Guest information about the IP networking stack:<ul><li><p><codeph translate="no">DomainName</codeph></p></li><li><p><codeph translate="no">IpAddress</codeph></p></li></ul></entry></row><row><entry>Last scan</entry><entry/><entry>The last scan of the host represented by the data platform timestamp in UTC.</entry></row><row><entry>Max memory usage (MB)</entry><entry><codeph translate="no">vmware_computeInstance::Runtime_MaxMemoryUsage</codeph></entry><entry>The maximum memory usage based on the memory configuration of the virtual machine, as well as limits configured on the virtual machine, or any parent resource pool.</entry></row><row><entry>Memory size (MB)</entry><entry><codeph translate="no">vmware_computeInstance::Config_MemorySizeMB</codeph></entry><entry>The memory size of the virtual machine, in megabytes.</entry></row><row><entry>Name</entry><entry><codeph translate="no">host::name</codeph></entry><entry>The name of the host.</entry></row><row><entry>Net</entry><entry><codeph translate="no">vmware_computeInstance::Net</codeph></entry><entry>
-         Guest information about network adapters:<ul><li><p><codeph translate="no">Network</codeph></p></li><li><p><codeph translate="no">MacAddress</codeph></p></li><li><p><codeph translate="no">IpAddress</codeph></p></li></ul></entry></row><row><entry>Number of CPU's</entry><entry><codeph translate="no">vmware_computeInstance::Config_NumCpu</codeph></entry><entry>The number of processors in the virtual machine.</entry></row><row><entry>Number of virtual disks</entry><entry><codeph translate="no">vmware_computeInstance::Config</codeph><codeph translate="no">_NumVirtualDisks</codeph></entry><entry>The number of virtual disks attached to the virtual machine.</entry></row><row><entry>Operating system</entry><entry><codeph translate="no">computeHost::os</codeph></entry><entry>The operating system  running on the host.</entry></row><row><entry>OS version</entry><entry><codeph translate="no">computeHost::osVersion</codeph></entry><entry>The version of the operating system running on the host.</entry></row><row><entry>Overall status</entry><entry><codeph translate="no">vmware_computeInstance::OverallStatus</codeph></entry><entry>The overall alarm status on this host.</entry></row><row><entry>Power state</entry><entry><codeph translate="no">vmware_computeInstance::Runtime_PowerState</codeph></entry><entry>Defines a  set of states for a virtual machine:<ul><li><p><codeph translate="no">poweredOff</codeph></p></li><li><p><codeph translate="no">poweredOn</codeph></p></li><li><p><codeph translate="no">suspended</codeph></p></li></ul></entry></row><row><entry>Tools running status</entry><entry><codeph translate="no">vmware_computeInstance::ToolsRunningStatus</codeph></entry><entry>The current running status of VMware tools in the guest operating system.</entry></row><row><entry>Tools version</entry><entry><codeph translate="no">vmware_computeInstance::ToolsVersion</codeph></entry><entry>The VMware tools version. </entry></row><row><entry>Uptime</entry><entry><codeph translate="no">computeHost::uptime</codeph></entry><entry>The uptime for the instance, in seconds. </entry></row></tbody></tgroup></table></p></section><section><title>Network nodes</title><p>Discover  nodes running on your network, including node attributes, packages, and containers.</p><p><simpletable><sthead><stentry>Attribute</stentry><stentry>Description</stentry></sthead><strow><stentry><codeph translate="no">dnsName</codeph></stentry><stentry>The private DNS name.</stentry></strow><strow><stentry><codeph translate="no">hostname</codeph></stentry><stentry>The name of the host. </stentry></strow><strow><stentry><codeph translate="no">name</codeph></stentry><stentry>The resource name.</stentry></strow><strow><stentry><codeph translate="no">os</codeph></stentry><stentry>The operating system  running on the host.</stentry></strow><strow><stentry><codeph translate="no">osKernel</codeph></stentry><stentry>The type of kernel running in the operating system: <codeph translate="no">Linux</codeph> or <codeph translate="no">Windows</codeph>.</stentry></strow><strow><stentry><codeph translate="no">osVersion</codeph></stentry><stentry>The version of the operating system running on the host.</stentry></strow><strow><stentry><codeph translate="no">privateIPv4</codeph></stentry><stentry>The private IP version 4 address.</stentry></strow><strow><stentry><codeph translate="no">privateIPv6</codeph></stentry><stentry>The private IP version 6 address.</stentry></strow><strow><stentry><codeph translate="no">publicDnsName</codeph></stentry><stentry>Fully qualified public DNS hostname.</stentry></strow><strow><stentry><codeph translate="no">publicIPv4</codeph></stentry><stentry>The IP version 4 address.</stentry></strow><strow><stentry><codeph translate="no">puppetInstalled</codeph></stentry><stentry>The indicator on whether Puppet is installed.</stentry></strow><strow><stentry><codeph translate="no">puppetVersion</codeph></stentry><stentry>The version of Puppet installed.</stentry></strow><strow><stentry><codeph translate="no">uptime</codeph></stentry><stentry>The uptime for the host, in seconds. </stentry></strow></simpletable></p></section></conbody></concept>
+<concept ditaarch:DITAArchVersion="1.2" id="node-attributes"
+      xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+      <title>Node attributes</title>
+      <shortdesc>Puppet Remediate considers each node as a network accessible resource, whether it's
+            physical or virtual, and discovers attributes that define the host's state and
+            properties.</shortdesc>
+      <prolog>
+            <author translate="no" type="creator">Eamonn Smith
+                  &lt;eamonn.smith@puppet.com&gt;</author>
+      </prolog>
+      <conbody>
+            <p/>
+            <section><title>Amazon Web Services</title><p>Discover EC2 instances running on your AWS
+                        account, including instance attributes, packages, and containers.</p><p><table>
+                              <tgroup cols="3">
+                                    <thead>
+                                          <row>
+                                                <entry>Attribute</entry>
+                                                <entry>Facet::attribute</entry>
+                                                <entry>Description</entry>
+                                          </row>
+                                    </thead>
+                                    <tbody>
+                                          <row>
+                                                <entry>AMI Name</entry>
+                                                <entry><codeph translate="no"
+                                                  >aws_ec2Instance::name</codeph></entry>
+                                                <entry>The name of the Amazon Machine Image
+                                                  (AMI).</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Availability zone </entry>
+                                                <entry><codeph translate="no"
+                                                  >aws_ec2Instance::Placement_AvailabilityZone</codeph></entry>
+                                                <entry>The availability zone of the
+                                                  instance.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Creation Date</entry>
+                                                <entry><codeph translate="no"
+                                                  >aws_ec2Instance::CreationDate</codeph></entry>
+                                                <entry>The date and time the resource was
+                                                  created.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Description</entry>
+                                                <entry><codeph translate="no"
+                                                  >aws_ec2Instance::Description</codeph></entry>
+                                                <entry>The description of the image. </entry>
+                                          </row>
+                                          <row>
+                                                <entry>Image type</entry>
+                                                <entry><codeph translate="no"
+                                                  >aws_ec2Instance::imageType</codeph></entry>
+                                                <entry>The type of image:<ul>
+                                                  <li><p><codeph translate="no"
+                                                  >machine</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >kernel</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >ramdisk</codeph></p></li>
+                                                  </ul></entry>
+                                          </row>
+                                          <row>
+                                                <entry>Instance type</entry>
+                                                <entry><codeph translate="no"
+                                                  >aws_ec2Instance::InstanceType</codeph></entry>
+                                                <entry>The instance type.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Key name</entry>
+                                                <entry><codeph translate="no"
+                                                  >aws_ec2Instance::KeyName</codeph></entry>
+                                                <entry>The name of the key pair.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Launch time</entry>
+                                                <entry><codeph translate="no"
+                                                  >aws_ec2Instance::LaunchTime</codeph></entry>
+                                                <entry>The date and time the resource was
+                                                  launched.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Name</entry>
+                                                <entry><codeph translate="no"
+                                                  >host::name</codeph></entry>
+                                                <entry>The name of the host. </entry>
+                                          </row>
+                                          <row>
+                                                <entry>Operating system</entry>
+                                                <entry><codeph translate="no"
+                                                  >computeHost::os</codeph></entry>
+                                                <entry>The operating system running on the
+                                                  instance.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>OS version</entry>
+                                                <entry><codeph translate="no"
+                                                  >computeHost::osVersion</codeph></entry>
+                                                <entry>The version of the operating system running
+                                                  on the instance.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Owner ID</entry>
+                                                <entry><codeph translate="no"
+                                                  >aws_ec2Instance::OwnerId</codeph></entry>
+                                                <entry>The account ID of the image owner.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Private DNS Name</entry>
+                                                <entry><codeph translate="no"
+                                                  >aws_ec2Instance::PrivateDnsName</codeph></entry>
+                                                <entry>The private DNS name.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Private IP address</entry>
+                                                <entry><codeph translate="no"
+                                                  >aws_ec2Instance::PrivateIpAddress</codeph></entry>
+                                                <entry>The private IP version 4 address.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Public DNS Name</entry>
+                                                <entry><codeph translate="no"
+                                                  >aws_ec2Instance::PublicDnsName</codeph></entry>
+                                                <entry>Fully qualified public DNS hostname.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Public IP address</entry>
+                                                <entry><codeph translate="no"
+                                                  >aws_ec2Instance::PublicIpAddress</codeph></entry>
+                                                <entry>The public IP version 4 address.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Region</entry>
+                                                <entry><codeph translate="no"
+                                                  >cloudResource::region</codeph></entry>
+                                                <entry>The region where the instance exists.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Security groups</entry>
+                                                <entry><codeph translate="no"
+                                                  >aws_ec2Instance::SecurityGroups</codeph></entry>
+                                                <entry>The security group associated with the
+                                                  instance.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>State</entry>
+                                                <entry><codeph translate="no"
+                                                  >aws_ec2Instance::Monitoring_State</codeph></entry>
+                                                <entry>Indicates whether monitoring is enabled:<ul>
+                                                  <li><p><codeph translate="no"
+                                                  >disabled</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >disabling</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >enabled</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >pending</codeph></p></li>
+                                                  </ul></entry>
+                                          </row>
+                                          <row>
+                                                <entry>Status</entry>
+                                                <entry><codeph translate="no"
+                                                  >cloudResource_status</codeph></entry>
+                                                <entry>The current status of the instance. </entry>
+                                          </row>
+                                          <row>
+                                                <entry>State transition reason</entry>
+                                                <entry><codeph translate="no"
+                                                  >aws_ec2Instance::StateTransitionReason</codeph></entry>
+                                                <entry>Describes the state change.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Subnet ID</entry>
+                                                <entry><codeph translate="no"
+                                                  >aws_ec2Instance::SubnetId</codeph></entry>
+                                                <entry>The ID of the subnet.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Tags</entry>
+                                                <entry><codeph translate="no"
+                                                  >tags::name</codeph><lines xml:space="preserve"><codeph translate="no">tags::value</codeph></lines></entry>
+                                                <entry>The tag assigned to the AWS resource.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Uptime</entry>
+                                                <entry><codeph translate="no"
+                                                  >computeHost::uptime</codeph></entry>
+                                                <entry>The uptime for the instance, in seconds.
+                                                </entry>
+                                          </row>
+                                          <row>
+                                                <entry>VM Image</entry>
+                                                <entry><codeph translate="no"
+                                                  >vm::image</codeph></entry>
+                                                <entry>The image identification number.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>VM key name</entry>
+                                                <entry><codeph translate="no"
+                                                  >vm::keyName</codeph></entry>
+                                                <entry>The unique identifier for the file in
+                                                  storage.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>VM virtualization type</entry>
+                                                <entry><codeph translate="no"
+                                                  >vm::virtualizationType</codeph></entry>
+                                                <entry>The virtualization type:<ul>
+                                                  <li><p><codeph translate="no">pv</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >hvm</codeph></p></li>
+                                                  </ul>
+                                                </entry>
+                                          </row>
+                                          <row>
+                                                <entry>VPC ID</entry>
+                                                <entry><codeph translate="no"
+                                                  >aws_ec2Instance::VpcId</codeph></entry>
+                                                <entry>The identification for the Virtual Private
+                                                  Cloud (VPC). </entry>
+                                          </row>
+                                    </tbody>
+                              </tgroup>
+                        </table></p></section>
+            <section><title>Microsoft Azure</title><p>Discover compute instances running on your
+                        Azure account, including instance attributes, packages, and containers.</p><p><table>
+                              <tgroup cols="3">
+                                    <thead>
+                                          <row>
+                                                <entry>Attribute</entry>
+                                                <entry>Facet::attribute</entry>
+                                                <entry>Description</entry>
+                                          </row>
+                                    </thead>
+                                    <tbody>
+                                          <row>
+                                                <entry>Created at</entry>
+                                                <entry><codeph translate="no"
+                                                  >azure_computeInstance::Created</codeph></entry>
+                                                <entry>The date and time the resource was
+                                                  created.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Data disks</entry>
+                                                <entry><codeph translate="no"
+                                                  >azure_computeInstance::DataDisks</codeph></entry>
+                                                <entry>The parameters used to add the data disk to
+                                                  the virtual machine. </entry>
+                                          </row>
+                                          <row>
+                                                <entry>ID</entry>
+                                                <entry><codeph translate="no"
+                                                  >azure_computeInstance::ID</codeph></entry>
+                                                <entry>The resource ID.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Image</entry>
+                                                <entry><codeph translate="no"
+                                                  >azure_computeInstance::Image</codeph></entry>
+                                                <entry>The virtual machine image. </entry>
+                                          </row>
+                                          <row>
+                                                <entry>Instance type</entry>
+                                                <entry><codeph translate="no"
+                                                  >azure_computeInstance::InstanceType</codeph></entry>
+                                                <entry>The type of instance. </entry>
+                                          </row>
+                                          <row>
+                                                <entry>IP address</entry>
+                                                <entry><codeph translate="no"
+                                                  >host::privateIPv4</codeph></entry>
+                                                <entry>The private IP version 4 address.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Key name</entry>
+                                                <entry><codeph translate="no"
+                                                  >azure_computeInstance::KeyName</codeph></entry>
+                                                <entry>The keypair name. </entry>
+                                          </row>
+                                          <row>
+                                                <entry>Last scan</entry>
+                                                <entry/>
+                                                <entry>The Last scan of the host represented by the
+                                                  data platform timestamp in UTC.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Location</entry>
+                                                <entry><codeph translate="no"
+                                                  >azure_computeInstance::Location</codeph></entry>
+                                                <entry>The location of the resource.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>MAC address</entry>
+                                                <entry><codeph translate="no"
+                                                  >azure_computeInstance::MacAddress</codeph></entry>
+                                                <entry>The MAC address assigned to the resource.
+                                                </entry>
+                                          </row>
+                                          <row>
+                                                <entry>Name</entry>
+                                                <entry><codeph translate="no"
+                                                  >host::name</codeph></entry>
+                                                <entry>The name of the host. </entry>
+                                          </row>
+                                          <row>
+                                                <entry>Operating system</entry>
+                                                <entry><codeph translate="no"
+                                                  >computeHost::os</codeph></entry>
+                                                <entry>The operating system running on the
+                                                  host.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>OS disk</entry>
+                                                <entry><codeph translate="no"
+                                                  >azure_computeInstance::OSDisk</codeph></entry>
+                                                <entry>The name of the operating system used by the
+                                                  virtual machine.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>OS version</entry>
+                                                <entry><codeph translate="no"
+                                                  >computeHost::osVersion</codeph></entry>
+                                                <entry>The version of the operating system running
+                                                  on the host.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Puppet version</entry>
+                                                <entry><codeph translate="no"
+                                                  >computeHost::puppetVersion</codeph></entry>
+                                                <entry>The version of Puppet installed.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Resource group</entry>
+                                                <entry><codeph translate="no"
+                                                  >azure_computeInstance::ResourceGroup</codeph></entry>
+                                                <entry>The name of the resource group. </entry>
+                                          </row>
+                                          <row>
+                                                <entry>Size</entry>
+                                                <entry><codeph translate="no"
+                                                  >azure_computeInstance::VMSize</codeph></entry>
+                                                <entry>The size type of the virtual machine.
+                                                </entry>
+                                          </row>
+                                          <row>
+                                                <entry>Status</entry>
+                                                <entry><codeph translate="no"
+                                                  >azure_computeInstance::Status</codeph></entry>
+                                                <entry>The status of the virtual machine. </entry>
+                                          </row>
+                                          <row>
+                                                <entry>Subscription ID</entry>
+                                                <entry><codeph translate="no"
+                                                  >azure_computeInstance::SubscriptionID</codeph></entry>
+                                                <entry>The subscription ID. </entry>
+                                          </row>
+                                          <row>
+                                                <entry>Tags</entry>
+                                                <entry><codeph translate="no"
+                                                  >azure_computeInstance::Tags</codeph></entry>
+                                                <entry>A list of tags relevant to the content of the
+                                                  image. </entry>
+                                          </row>
+                                          <row>
+                                                <entry>Uptime</entry>
+                                                <entry><codeph translate="no"
+                                                  >computeHost::Uptime</codeph></entry>
+                                                <entry>The uptime for the host, in seconds.</entry>
+                                          </row>
+                                    </tbody>
+                              </tgroup>
+                        </table></p></section>
+            <section><title>OpenStack</title><p>Discover hosts running on your OpenStack account,
+                        including host attributes, packages, and containers.</p><p><table>
+                              <tgroup cols="3">
+                                    <thead>
+                                          <row>
+                                                <entry>Attribute</entry>
+                                                <entry>Facet::attribute</entry>
+                                                <entry>Description</entry>
+                                          </row>
+                                    </thead>
+                                    <tbody>
+                                          <row>
+                                                <entry>Server ID</entry>
+                                                <entry><codeph translate="no"
+                                                  >os_compute::ServerID</codeph></entry>
+                                                <entry>The UUID of the server.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Name</entry>
+                                                <entry><codeph translate="no"
+                                                  >host::hostname</codeph></entry>
+                                                <entry/>
+                                          </row>
+                                          <row>
+                                                <entry>IP address</entry>
+                                                <entry><codeph translate="no"
+                                                  >host::privateIPv4</codeph></entry>
+                                                <entry>The private IP version 4 address.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Operating system</entry>
+                                                <entry><codeph translate="no"
+                                                  >computeHost::os</codeph></entry>
+                                                <entry>The operating system running on the
+                                                  host.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>OS version</entry>
+                                                <entry><codeph translate="no"
+                                                  >computeHost::osVersion</codeph></entry>
+                                                <entry>The version of the operating system running
+                                                  on the host.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Uptime</entry>
+                                                <entry><codeph translate="no"
+                                                  >computeHost::uptime</codeph></entry>
+                                                <entry>The uptime for the host, in seconds.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Last scan</entry>
+                                                <entry/>
+                                                <entry>The Last scan of the host represented by the
+                                                  data platform timestamp in UTC.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Puppet version</entry>
+                                                <entry><codeph translate="no"
+                                                  >computeHost::puppetVersio</codeph>n</entry>
+                                                <entry>The version of Puppet installed.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Created on</entry>
+                                                <entry><codeph translate="no"
+                                                  >os_compute::ServerCreated</codeph></entry>
+                                                <entry>The date and time the resource was
+                                                  created.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Server Name</entry>
+                                                <entry><codeph translate="no"
+                                                  >os_compute::ServerName</codeph></entry>
+                                                <entry>The server name. </entry>
+                                          </row>
+                                          <row>
+                                                <entry>Flavor</entry>
+                                                <entry><codeph translate="no"
+                                                  >os_compute::FlavorName</codeph></entry>
+                                                <entry>The display name of the flavor.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Image name</entry>
+                                                <entry><codeph translate="no"
+                                                  >os_compute::ImageName</codeph></entry>
+                                                <entry>The display name of the image.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Status</entry>
+                                                <entry><codeph translate="no"
+                                                  >os_compute::ServerStatus</codeph></entry>
+                                                <entry>The current server state.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Security groups</entry>
+                                                <entry><codeph translate="no"
+                                                  >os_compute::security_groups</codeph></entry>
+                                                <entry>The security group names.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>VCPUs</entry>
+                                                <entry><codeph translate="no"
+                                                  >os_compute::vcpus</codeph></entry>
+                                                <entry>The number of virtual CPUs in use.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>RAM (MB)</entry>
+                                                <entry><codeph translate="no"
+                                                  >os_compute::ram</codeph></entry>
+                                                <entry>The RAM (MB) on the virtual machine.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Disk (GB)</entry>
+                                                <entry><codeph translate="no"
+                                                  >os_compute::disk</codeph></entry>
+                                                <entry>The disk size (GB) on the virtual
+                                                  machine.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Key name</entry>
+                                                <entry><codeph translate="no"
+                                                  >os_compute::key_name</codeph></entry>
+                                                <entry>The keypair name. </entry>
+                                          </row>
+                                          <row>
+                                                <entry>IP addresses</entry>
+                                                <entry><codeph translate="no"
+                                                  >os_compute::ServerAddresses</codeph></entry>
+                                                <entry>The IP addresses assigned to the virtual
+                                                  machine. </entry>
+                                          </row>
+                                          <row>
+                                                <entry>Metadata</entry>
+                                                <entry><codeph translate="no"
+                                                  >os_compute::ServerMetadata</codeph></entry>
+                                                <entry>Custom server metadata at server launch
+                                                  time.</entry>
+                                          </row>
+                                    </tbody>
+                              </tgroup>
+                        </table></p></section>
+            <section><title>Google Cloud Platform</title><p>Discover compute engine instances
+                        running on your GCP account, including instance attributes, packages, and
+                        containers.</p><p><simpletable>
+                              <sthead>
+                                    <stentry>Attribute</stentry>
+                                    <stentry>Description</stentry>
+                              </sthead>
+                              <strow>
+                                    <stentry><codeph translate="no">createTime</codeph></stentry>
+                                    <stentry>The date and time the resource was created.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">hostname</codeph></stentry>
+                                    <stentry>The name of the host. </stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">id</codeph></stentry>
+                                    <stentry>The ID of the instance.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">image</codeph></stentry>
+                                    <stentry>The image identification number used by your cloud
+                                          source.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">name</codeph></stentry>
+                                    <stentry>The resource name.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">os</codeph></stentry>
+                                    <stentry>The operating system running on the host.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">osKernel</codeph></stentry>
+                                    <stentry>The type of kernel running in the operating system:
+                                                <codeph translate="no">Linux</codeph> or <codeph
+                                                translate="no">Windows</codeph>.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">osVersion</codeph></stentry>
+                                    <stentry>The version of the operating system running on the
+                                          host.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">preemptible</codeph></stentry>
+                                    <stentry>Indicates whether it is an instance that can be
+                                          temporarily interrupted: <codeph translate="no"
+                                                >true</codeph> or <codeph translate="no"
+                                                >false</codeph>.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">privateIPv4</codeph></stentry>
+                                    <stentry>The private IP version 4 address.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">provider</codeph></stentry>
+                                    <stentry>The name of the cloud provider: <codeph translate="no"
+                                                >Google Cloud Platform</codeph>.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">publicIPv4</codeph></stentry>
+                                    <stentry>The IP version 4 address.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no"
+                                          >puppetInstalled</codeph></stentry>
+                                    <stentry>The indicator on whether Puppet is installed.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">puppetVersion</codeph></stentry>
+                                    <stentry>The version of Puppet installed.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">region</codeph></stentry>
+                                    <stentry>The region where the host exists.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">status</codeph></stentry>
+                                    <stentry>The current status of the host. </stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">tags</codeph></stentry>
+                                    <stentry>The tags, containing metadata, assigned to the
+                                          instance. </stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">uptime</codeph></stentry>
+                                    <stentry>The uptime for the host, in seconds. </stentry>
+                              </strow>
+                        </simpletable></p></section>
+            <section><title>VMware vSphere</title><p>Discover ESXi nodes running on your VMware
+                        vSphere account, including node attributes, packages, and containers.</p><p><table>
+                              <tgroup cols="3">
+                                    <thead>
+                                          <row>
+                                                <entry>Field</entry>
+                                                <entry>Facet::attribute</entry>
+                                                <entry>Description</entry>
+                                          </row>
+                                    </thead>
+                                    <tbody>
+                                          <row>
+                                                <entry>Annotation</entry>
+                                                <entry><codeph translate="no"
+                                                  >vmware_computeInstance::Config_Annotation</codeph></entry>
+                                                <entry>Description for the virtual machine. </entry>
+                                          </row>
+                                          <row>
+                                                <entry>Disk</entry>
+                                                <entry><codeph translate="no"
+                                                  >vmware_computeInstance::Disk</codeph></entry>
+                                                <entry>Guest information about disks; used space and
+                                                  total space available. </entry>
+                                          </row>
+                                          <row>
+                                                <entry>Fault tolerance state</entry>
+                                                <entry><codeph translate="no"
+                                                  >vmware_computeInstance::Runtime_FaultToleranceState</codeph></entry>
+                                                <entry>Defines a set of states for a fault tolerant
+                                                  virtual machine:<ul>
+                                                  <li><p><codeph translate="no"
+                                                  >disabled</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >enabled</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >needSecondary</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >notConfigured</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >running</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >starting</codeph></p></li>
+                                                  </ul></entry>
+                                          </row>
+                                          <row>
+                                                <entry>Guest full name</entry>
+                                                <entry><codeph translate="no"
+                                                  >vmware_computeInstance::GuestFullName</codeph></entry>
+                                                <entry>The full name of the guest operating system
+                                                  for the virtual machine.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Guest hostname</entry>
+                                                <entry><codeph translate="no"
+                                                  >vmware_computeInstance::HostName</codeph></entry>
+                                                <entry>The FDQN of the guest host. </entry>
+                                          </row>
+                                          <row>
+                                                <entry>Guest heartbeat status</entry>
+                                                <entry><codeph translate="no"
+                                                  >vmware_computeInstance::QuickStats</codeph></entry>
+                                                <entry>The current status of the guest operating system:<ul>
+                                                  <li><p><codeph translate="no">gray</codeph> -
+                                                  VMware tools not installed or running.</p></li>
+                                                  <li><p><codeph translate="no">red</codeph> - No
+                                                  heartbeat.</p></li>
+                                                  <li><p><codeph translate="no">yellow</codeph> -
+                                                  Intermittent heartbeat.</p></li>
+                                                  <li><p><codeph translate="no">green</codeph> -
+                                                  Guest operating system responding
+                                                  normally.</p></li>
+                                                  </ul></entry>
+                                          </row>
+                                          <row>
+                                                <entry>Guest state</entry>
+                                                <entry><codeph translate="no"
+                                                  >vmware_computeInstance::GuestState</codeph></entry>
+                                                <entry>Operation mode of the guest operating system:<ul>
+                                                  <li><p><codeph translate="no"
+                                                  >running</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >shuttingdown</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >resetting</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >standby</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >notrunning</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >unknown</codeph></p></li>
+                                                  </ul>
+                                                </entry>
+                                          </row>
+                                          <row>
+                                                <entry>ID</entry>
+                                                <entry><codeph translate="no"
+                                                  >vmware_computeInstance::ID</codeph></entry>
+                                                <entry>The guest operating system
+                                                  identifier.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>IP address</entry>
+                                                <entry><codeph translate="no"
+                                                  >host::privateIPv4</codeph></entry>
+                                                <entry>The private IP version 4 address.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>IP stack</entry>
+                                                <entry><codeph translate="no"
+                                                  >vmware_computeInstance::IpStack</codeph></entry>
+                                                <entry>Guest information about the IP networking stack:<ul>
+                                                  <li><p><codeph translate="no"
+                                                  >DomainName</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >IpAddress</codeph></p></li>
+                                                  </ul></entry>
+                                          </row>
+                                          <row>
+                                                <entry>Last scan</entry>
+                                                <entry/>
+                                                <entry>The last scan of the host represented by the
+                                                  data platform timestamp in UTC.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Max memory usage (MB)</entry>
+                                                <entry><codeph translate="no"
+                                                  >vmware_computeInstance::Runtime_MaxMemoryUsage</codeph></entry>
+                                                <entry>The maximum memory usage based on the memory
+                                                  configuration of the virtual machine, as well as
+                                                  limits configured on the virtual machine, or any
+                                                  parent resource pool.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Memory size (MB)</entry>
+                                                <entry><codeph translate="no"
+                                                  >vmware_computeInstance::Config_MemorySizeMB</codeph></entry>
+                                                <entry>The memory size of the virtual machine, in
+                                                  megabytes.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Name</entry>
+                                                <entry><codeph translate="no"
+                                                  >host::name</codeph></entry>
+                                                <entry>The name of the host.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Net</entry>
+                                                <entry><codeph translate="no"
+                                                  >vmware_computeInstance::Net</codeph></entry>
+                                                <entry> Guest information about network adapters:<ul>
+                                                  <li><p><codeph translate="no"
+                                                  >Network</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >MacAddress</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >IpAddress</codeph></p></li>
+                                                  </ul></entry>
+                                          </row>
+                                          <row>
+                                                <entry>Number of CPU's</entry>
+                                                <entry><codeph translate="no"
+                                                  >vmware_computeInstance::Config_NumCpu</codeph></entry>
+                                                <entry>The number of processors in the virtual
+                                                  machine.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Number of virtual disks</entry>
+                                                <entry><codeph translate="no"
+                                                  >vmware_computeInstance::Config</codeph><codeph
+                                                  translate="no">_NumVirtualDisks</codeph></entry>
+                                                <entry>The number of virtual disks attached to the
+                                                  virtual machine.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Operating system</entry>
+                                                <entry><codeph translate="no"
+                                                  >computeHost::os</codeph></entry>
+                                                <entry>The operating system running on the
+                                                  host.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>OS version</entry>
+                                                <entry><codeph translate="no"
+                                                  >computeHost::osVersion</codeph></entry>
+                                                <entry>The version of the operating system running
+                                                  on the host.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Overall status</entry>
+                                                <entry><codeph translate="no"
+                                                  >vmware_computeInstance::OverallStatus</codeph></entry>
+                                                <entry>The overall alarm status on this
+                                                  host.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Power state</entry>
+                                                <entry><codeph translate="no"
+                                                  >vmware_computeInstance::Runtime_PowerState</codeph></entry>
+                                                <entry>Defines a set of states for a virtual machine:<ul>
+                                                  <li><p><codeph translate="no"
+                                                  >poweredOff</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >poweredOn</codeph></p></li>
+                                                  <li><p><codeph translate="no"
+                                                  >suspended</codeph></p></li>
+                                                  </ul></entry>
+                                          </row>
+                                          <row>
+                                                <entry>Tools running status</entry>
+                                                <entry><codeph translate="no"
+                                                  >vmware_computeInstance::ToolsRunningStatus</codeph></entry>
+                                                <entry>The current running status of VMware tools in
+                                                  the guest operating system.</entry>
+                                          </row>
+                                          <row>
+                                                <entry>Tools version</entry>
+                                                <entry><codeph translate="no"
+                                                  >vmware_computeInstance::ToolsVersion</codeph></entry>
+                                                <entry>The VMware tools version. </entry>
+                                          </row>
+                                          <row>
+                                                <entry>Uptime</entry>
+                                                <entry><codeph translate="no"
+                                                  >computeHost::uptime</codeph></entry>
+                                                <entry>The uptime for the instance, in seconds.
+                                                </entry>
+                                          </row>
+                                    </tbody>
+                              </tgroup>
+                        </table></p></section>
+            <section><title>Network nodes</title><p>Discover nodes running on your network,
+                        including node attributes, packages, and containers.</p><p><simpletable>
+                              <sthead>
+                                    <stentry>Attribute</stentry>
+                                    <stentry>Description</stentry>
+                              </sthead>
+                              <strow>
+                                    <stentry><codeph translate="no">dnsName</codeph></stentry>
+                                    <stentry>The private DNS name.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">hostname</codeph></stentry>
+                                    <stentry>The name of the host. </stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">name</codeph></stentry>
+                                    <stentry>The resource name.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">os</codeph></stentry>
+                                    <stentry>The operating system running on the host.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">osKernel</codeph></stentry>
+                                    <stentry>The type of kernel running in the operating system:
+                                                <codeph translate="no">Linux</codeph> or <codeph
+                                                translate="no">Windows</codeph>.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">osVersion</codeph></stentry>
+                                    <stentry>The version of the operating system running on the
+                                          host.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">privateIPv4</codeph></stentry>
+                                    <stentry>The private IP version 4 address.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">privateIPv6</codeph></stentry>
+                                    <stentry>The private IP version 6 address.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">publicDnsName</codeph></stentry>
+                                    <stentry>Fully qualified public DNS hostname.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">publicIPv4</codeph></stentry>
+                                    <stentry>The IP version 4 address.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no"
+                                          >puppetInstalled</codeph></stentry>
+                                    <stentry>The indicator on whether Puppet is installed.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">puppetVersion</codeph></stentry>
+                                    <stentry>The version of Puppet installed.</stentry>
+                              </strow>
+                              <strow>
+                                    <stentry><codeph translate="no">uptime</codeph></stentry>
+                                    <stentry>The uptime for the host, in seconds. </stentry>
+                              </strow>
+                        </simpletable></p></section>
+      </conbody>
+</concept>

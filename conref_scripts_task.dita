@@ -1,5 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
-<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                            (topic ut-d)                            (topic indexing-d)                              (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)   " id="conref-scripts-task"><title>conref_scripts_task</title><shortdesc/><prolog><author translate="no" type="creator">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author></prolog><taskbody><context>
+<task ditaarch:DITAArchVersion="1.2" id="conref-scripts-task"
+    xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title>conref_scripts_task</title>
+    <shortdesc/>
+    <prolog>
+        <author translate="no" type="creator">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author>
+    </prolog>
+    <taskbody>
+        <context>
             <p/>
-        </context><steps><step id="step-1560420212350"><cmd>On the sidebar, click <uicontrol>Manage tasks</uicontrol>, and then click <uicontrol>Add tasks</uicontrol>.</cmd></step><step id="step-1560420230354"><cmd>On the <wintitle>Upload file</wintitle> page, select <uicontrol>Add Linux script</uicontrol> or <uicontrol>Add Windows script</uicontrol>. </cmd></step><step id="step-1560420244905"><cmd>Select your script, and then click <uicontrol>Open</uicontrol>.</cmd><info><p><note type="tip">If you upload both a <ph conkeyref="ProductNames/linux"/> and <ph conkeyref="ProductNames/windows"/> script, they are  converted and combined into one task that can run on either operating system.  </note></p></info></step><step id="step-1560420261226"><cmd>Click <uicontrol>Add details</uicontrol>.</cmd></step><step id="step-1560420285215"><cmd>On the <wintitle>Add details</wintitle> page, enter a name and description for the task. </cmd></step><step id="step-1560420292004"><cmd>Click <uicontrol>Save task</uicontrol>.</cmd><stepresult><p>The <wintitle>Settings</wintitle> page appears, and your task is now available and is listed in the tasks table.</p></stepresult></step></steps></taskbody></task>
+        </context>
+        <steps>
+            <step id="step-1560420212350">
+                <cmd>On the sidebar, click <uicontrol>Manage tasks</uicontrol>, and then click
+                        <uicontrol>Add tasks</uicontrol>.</cmd>
+            </step>
+            <step id="step-1560420230354">
+                <cmd>On the <wintitle>Upload file</wintitle> page, select <uicontrol>Add Linux
+                        script</uicontrol> or <uicontrol>Add Windows script</uicontrol>. </cmd>
+            </step>
+            <step id="step-1560420244905">
+                <cmd>Select your script, and then click <uicontrol>Open</uicontrol>.</cmd>
+                <info><p><note type="tip">If you upload both a <ph conkeyref="ProductNames/linux"/>
+                            and <ph conkeyref="ProductNames/windows"/> script, they are converted
+                            and combined into one task that can run on either operating system.
+                        </note></p></info>
+            </step>
+            <step id="step-1560420261226">
+                <cmd>Click <uicontrol>Add details</uicontrol>.</cmd>
+            </step>
+            <step id="step-1560420285215">
+                <cmd>On the <wintitle>Add details</wintitle> page, enter a name and description for
+                    the task. </cmd>
+            </step>
+            <step id="step-1560420292004">
+                <cmd>Click <uicontrol>Save task</uicontrol>.</cmd>
+                <stepresult><p>The <wintitle>Settings</wintitle> page appears, and your task is now
+                        available and is listed in the tasks table.</p></stepresult>
+            </step>
+        </steps>
+    </taskbody>
+</task>
