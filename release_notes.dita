@@ -10,7 +10,7 @@
             &lt;claire.cadman@puppet.com&gt;</author>
     </prolog>
     <conbody>
-        <section><title>Version 1.0.1</title><p>Released 1 August 2019.</p><p>This is the initial
+        <section><title>Version 1.0.1</title><p>Released 1 August 2019. Change 1</p><p>This is the initial
                 release of <ph conkeyref="ProductNames/remediate"/>.</p><p>Known issues:</p><ul>
                 <li><p>
                         <b>Unable to install <ph conkeyref="ProductNames/remediate"/> on Debian8
@@ -28,7 +28,7 @@
                 <li><p>
                         <b>In a multi-network environment, the first discovery run might not
                             identify the IP or hostname</b>. Wait for the second discovery run,
-                        which happens automatically after four hours. </p></li>
+                        which happens automatically after four hours.  Change 2</p></li>
             </ul></section>
     </conbody>
 </concept>
