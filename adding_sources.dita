@@ -5,7 +5,9 @@
     <title>Add sources</title>
     <shortdesc>Add your vulnerability scanner to detect and fix vulnerabilities across your
         infrastructure. To discover nodes, packages, and containers running on your entire
-        infrastructure, add multiple infrastructure sources. </shortdesc>
+        infrastructure, add multiple infrastructure sources.
+        <?oxy_insert_start author="Michael McLoughlin" timestamp="20201210T234040+0000"?>This is
+        test3<?oxy_insert_end?></shortdesc>
     <prolog>
         <author translate="no" type="creator">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author>
     </prolog>
