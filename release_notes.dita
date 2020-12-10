@@ -4,7 +4,9 @@
     xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
     <title>Release notes</title>
     <shortdesc>New features, enhancements, resolved issues, and known issues for <ph
-            conkeyref="ProductNames/remediate_long"/> 1.x release series.</shortdesc>
+            conkeyref="ProductNames/remediate_long"/> 1.x release
+        series.<?oxy_insert_start author="Michael McLoughlin" timestamp="20201210T233746+0000"?>
+        This is test2<?oxy_insert_end?></shortdesc>
     <prolog>
         <author translate="no" type="creator">Claire Cadman
             &lt;claire.cadman@puppet.com&gt;</author>
