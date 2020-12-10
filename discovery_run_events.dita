@@ -4,7 +4,9 @@
   xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
   <title>Discovery events</title>
   <shortdesc>The <wintitle>Recent events</wintitle> page provides the following information about
-    each discovery run which, by default, occurs every 4 hours.</shortdesc>
+    each discovery run which, by default, occurs every 4
+    hours.<?oxy_insert_start author="Michael McLoughlin" timestamp="20201210T233546+0000"?> This is
+    test1<?oxy_insert_end?></shortdesc>
   <prolog>
     <author translate="no" type="creator">Eamonn Smith &lt;eamonn.smith@puppet.com&gt;</author>
   </prolog>
